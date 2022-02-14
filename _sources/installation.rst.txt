@@ -23,6 +23,6 @@ You can check that that your installation is setup correctly by running one of t
 
 .. code-block:: matlab
 
-   test_euler
+   runBattery1D
 
 .. _MRST: https://www.sintef.no/Projectweb/MRST/
