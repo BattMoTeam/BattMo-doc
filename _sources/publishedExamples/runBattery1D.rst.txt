@@ -3,16 +3,18 @@ Battery 1D model
 ----------------
 *Generated from runBattery1D.m*
 
-Include presentation of the test case (use rst format)
+.. include:: runBattery1D_.rst
+
 
 .. code-block:: matlab
 
   % load MRST modules
   mrstModule add ad-core multimodel mrst-gui mpfa
-  
-  % We create an instance of BatteryInputParams. This class is used to initiate the battery simulator and it propagates
-  % all the parameters through out the submodels.
-  
+
+We create an instance of :class:`BatteryInputParams <Battery.BatteryInputParams>`. This class is used to initiate the battery simulator and it propagates all the parameters through out the submodels.
+
+.. code-block:: matlab
+
   % The input parameters can be given in json format. The json file is read and used to populate the paramobj object.
   jsonstruct = parseBatmoJson('JsonDatas/lithiumbattery.json');
   
@@ -49,7 +51,7 @@ Here, we use a 1D model and the class BatteryGenerator1D already contains the di
 
 The Battery model is initialized by sending paramobj to the Battery class constructor
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-see :class:`Battery.Battery`
+see :class:`Battery <Battery.Battery>`
 
 .. code-block:: matlab
 
@@ -163,7 +165,7 @@ We plot the the output voltage and current
 
 .. code-block:: matlab
 
-  figure
+  igure
   plot((time/hour), Enew, '*-', 'linewidth', 3)
   title('Potential (E)')
   xlabel('time (hours)')

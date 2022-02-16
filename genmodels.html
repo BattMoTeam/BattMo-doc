@@ -38,12 +38,12 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation instruction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inputs.html">Input Parameters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="batterymodel.html">Battery model</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Generic models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="electrodes.html">Electrode components</a></li>
 <li class="toctree-l1"><a class="reference internal" href="electrolyte.html">Electrolyte components</a></li>
-<li class="toctree-l1"><a class="reference internal" href="inputs.html">Input classes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bibliography.html">Reference lists</a></li>
 </ul>
 
@@ -78,12 +78,19 @@ conservation (<a class="reference internal" href="#Electrochemistry.ElectroChemi
 <span class="target" id="module-Electrochemistry"></span><dl class="mat class">
 <dt class="sig sig-object mat" id="Electrochemistry.ElectronicComponent">
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">ElectronicComponent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">paramobj</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Electrochemistry.ElectronicComponent" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">home.xavier.Matlab.Projects.batmo.Utilities.BaseModel</span></code></p>
+<dd><p>Bases: <a class="reference internal" href="#Utilities.BaseModel" title="Utilities.BaseModel"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">Utilities.BaseModel</span></code></a></p>
+<p>The ElectronicComponent class is model to assemble charge conservation equation</p>
 <p>Here, <code class="code docutils literal notranslate"><span class="pre">paramobj</span></code> is instance of <a class="reference internal" href="inputs.html#Electrochemistry.ElectronicComponentInputParams" title="Electrochemistry.ElectronicComponentInputParams"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">ElectronicComponentInputParams</span></code></a></p>
 <dl class="mat attribute">
 <dt class="sig sig-object mat" id="Electrochemistry.ElectronicComponent.EffectiveElectricalConductivity">
 <span class="sig-name descname"><span class="pre">EffectiveElectricalConductivity</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#Electrochemistry.ElectronicComponent.EffectiveElectricalConductivity" title="Permalink to this definition"></a></dt>
 <dd><p>Effective electrical conductivity</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="Electrochemistry.ElectronicComponent.ElectronicComponent">
+<span class="sig-name descname"><span class="pre">ElectronicComponent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">paramobj</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Electrochemistry.ElectronicComponent.ElectronicComponent" title="Permalink to this definition"></a></dt>
+<dd><p>Here, <code class="code docutils literal notranslate"><span class="pre">paramobj</span></code> is instance of <a class="reference internal" href="inputs.html#Electrochemistry.ElectronicComponentInputParams" title="Electrochemistry.ElectronicComponentInputParams"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">ElectronicComponentInputParams</span></code></a></p>
 </dd></dl>
 
 <dl class="mat method">
@@ -123,6 +130,12 @@ conservation (<a class="reference internal" href="#Electrochemistry.ElectroChemi
 <dd><p>Assemble residual of the mass conservation equation which is stored in <code class="code docutils literal notranslate"><span class="pre">state.massCons</span></code></p>
 </dd></dl>
 
+</dd></dl>
+
+<span class="target" id="module-Utilities"></span><dl class="mat class">
+<dt class="sig sig-object mat" id="Utilities.BaseModel">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">BaseModel</span></span><a class="headerlink" href="#Utilities.BaseModel" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">home.xavier.Matlab.Projects.batmo.MRST.mrst-autodiff.ad-core.models.PhysicalModel</span></code></p>
 </dd></dl>
 
 </div>

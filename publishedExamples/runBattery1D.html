@@ -87,14 +87,21 @@
   <div class="section" id="battery-1d-model">
 <h1>Battery 1D model<a class="headerlink" href="#battery-1d-model" title="Permalink to this headline"></a></h1>
 <p><em>Generated from runBattery1D.m</em></p>
-<p>Include presentation of the test case (use rst format)</p>
+<p>We consider a one-dimensional model.</p>
+<p>We run thermo coupled simulation on a 1D model</p>
+<p>The domain is split in three regions :</p>
+<ul class="simple">
+<li><p>two electrodes</p></li>
+<li><p>electrolyte</p></li>
+</ul>
+<p>We use orgLiPF6 solvent</p>
+<a class="reference internal image-reference" href="../_images/batmologo.png"><img alt="../_images/batmologo.png" src="../_images/batmologo.png" style="width: 102.4px; height: 102.4px;" /></a>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% load MRST modules</span>
 <span class="n">mrstModule</span> <span class="n">add</span> <span class="n">ad</span><span class="o">-</span><span class="n">core</span> <span class="n">multimodel</span> <span class="n">mrst</span><span class="o">-</span><span class="n">gui</span> <span class="n">mpfa</span>
-
-<span class="c">% We create an instance of BatteryInputParams. This class is used to initiate the battery simulator and it propagates</span>
-<span class="c">% all the parameters through out the submodels.</span>
-
-<span class="c">% The input parameters can be given in json format. The json file is read and used to populate the paramobj object.</span>
+</pre></div>
+</div>
+<p>We create an instance of <a class="reference internal" href="../inputs.html#Battery.BatteryInputParams" title="Battery.BatteryInputParams"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">BatteryInputParams</span></code></a>. This class is used to initiate the battery simulator and it propagates all the parameters through out the submodels.</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% The input parameters can be given in json format. The json file is read and used to populate the paramobj object.</span>
 <span class="n">jsonstruct</span> <span class="p">=</span> <span class="n">parseBatmoJson</span><span class="p">(</span><span class="s">&#39;JsonDatas/lithiumbattery.json&#39;</span><span class="p">);</span>
 
 <span class="n">paramobj</span> <span class="p">=</span> <span class="n">BatteryInputParams</span><span class="p">(</span><span class="n">jsonstruct</span><span class="p">);</span>
@@ -128,7 +135,7 @@
 </div>
 <div class="section" id="the-battery-model-is-initialized-by-sending-paramobj-to-the-battery-class-constructor">
 <h2>The Battery model is initialized by sending paramobj to the Battery class constructor<a class="headerlink" href="#the-battery-model-is-initialized-by-sending-paramobj-to-the-battery-class-constructor" title="Permalink to this headline"></a></h2>
-<p>see <a class="reference internal" href="../batterymodel.html#Battery.Battery" title="Battery.Battery"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">Battery.Battery</span></code></a></p>
+<p>see <a class="reference internal" href="../batterymodel.html#Battery.Battery" title="Battery.Battery"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">Battery</span></code></a></p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="p">=</span> <span class="n">Battery</span><span class="p">(</span><span class="n">paramobj</span><span class="p">,</span><span class="s">&#39;use_thermal&#39;</span><span class="p">,</span><span class="n">true</span><span class="p">,</span><span class="s">&#39;use_solid_diffusion&#39;</span><span class="p">,</span><span class="n">true</span><span class="p">);</span>
 <span class="n">model</span><span class="p">.</span><span class="n">AutoDiffBackend</span><span class="p">=</span> <span class="n">AutoDiffBackend</span><span class="p">();</span>
 </pre></div>
@@ -224,7 +231,7 @@
 </div>
 <div class="section" id="we-plot-the-the-output-voltage-and-current">
 <h2>We plot the the output voltage and current<a class="headerlink" href="#we-plot-the-the-output-voltage-and-current" title="Permalink to this headline"></a></h2>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">figure</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">igure</span>
 <span class="n">plot</span><span class="p">((</span><span class="n">time</span><span class="o">/</span><span class="n">hour</span><span class="p">),</span> <span class="n">Enew</span><span class="p">,</span> <span class="s">&#39;*-&#39;</span><span class="p">,</span> <span class="s">&#39;linewidth&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="n">title</span><span class="p">(</span><span class="s">&#39;Potential (E)&#39;</span><span class="p">)</span>
 <span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;time (hours)&#39;</span><span class="p">)</span>

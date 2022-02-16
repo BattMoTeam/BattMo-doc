@@ -36,12 +36,12 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation instruction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inputs.html">Input Parameters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="batterymodel.html">Battery model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="genmodels.html">Generic models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="electrodes.html">Electrode components</a></li>
 <li class="toctree-l1"><a class="reference internal" href="electrolyte.html">Electrolyte components</a></li>
-<li class="toctree-l1"><a class="reference internal" href="inputs.html">Input classes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bibliography.html">Reference lists</a></li>
 </ul>
 
@@ -80,8 +80,10 @@
  | <a href="#G"><strong>G</strong></a>
  | <a href="#H"><strong>H</strong></a>
  | <a href="#I"><strong>I</strong></a>
+ | <a href="#L"><strong>L</strong></a>
  | <a href="#N"><strong>N</strong></a>
  | <a href="#P"><strong>P</strong></a>
+ | <a href="#R"><strong>R</strong></a>
  | <a href="#S"><strong>S</strong></a>
  | <a href="#T"><strong>T</strong></a>
  | <a href="#U"><strong>U</strong></a>
@@ -96,6 +98,8 @@
       <ul>
         <li><a href="electrodes.html#Electrochemistry.ElectrodeActiveComponent.ActiveMaterial">(ElectrodeActiveComponent attribute)</a>
 </li>
+        <li><a href="inputs.html#Electrochemistry.ElectrodeActiveComponentInputParams.ActiveMaterial">(ElectrodeActiveComponentInputParams attribute)</a>
+</li>
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
@@ -107,6 +111,8 @@
 <h2 id="B">B</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="genmodels.html#Utilities.BaseModel">BaseModel (class in Utilities)</a>
+</li>
       <li><a href="batterymodel.html#Battery.Battery">Battery (class in Battery)</a>
 
       <ul>
@@ -125,8 +131,14 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="batterymodel.html#Battery.Battery.cmin">cmin (Battery attribute)</a>
 </li>
-      <li><a href="batterymodel.html#Battery.Battery.couplingTerms">couplingTerms (Battery attribute)</a>
+      <li><a href="inputs.html#Electrochemistry.CurrentCollectorInputParams.couplingTerm">couplingTerm (CurrentCollectorInputParams attribute)</a>
 </li>
+      <li><a href="batterymodel.html#Battery.Battery.couplingTerms">couplingTerms (Battery attribute)</a>
+
+      <ul>
+        <li><a href="inputs.html#Battery.BatteryInputParams.couplingTerms">(BatteryInputParams attribute)</a>
+</li>
+      </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="electrodes.html#Electrochemistry.CurrentCollector">CurrentCollector (class in Electrochemistry)</a>
@@ -151,10 +163,16 @@
 <h2 id="E">E</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="inputs.html#Electrochemistry.Electrodes.ActiveMaterialInputParams.Eak">Eak (ActiveMaterialInputParams attribute)</a>
+</li>
       <li><a href="genmodels.html#Electrochemistry.ElectroChemicalComponent.EffectiveDiffusionCoefficient">EffectiveDiffusionCoefficient (ElectroChemicalComponent attribute)</a>
 </li>
       <li><a href="genmodels.html#Electrochemistry.ElectronicComponent.EffectiveElectricalConductivity">EffectiveElectricalConductivity (ElectronicComponent attribute)</a>
+
+      <ul>
+        <li><a href="inputs.html#Electrochemistry.ElectronicComponentInputParams.EffectiveElectricalConductivity">(ElectronicComponentInputParams attribute)</a>
 </li>
+      </ul></li>
       <li><a href="electrodes.html#Electrochemistry.ElectrodeActiveComponent.EffectiveHeatCapacity">EffectiveHeatCapacity (ElectrodeActiveComponent attribute)</a>
 </li>
       <li><a href="electrodes.html#Electrochemistry.ElectrodeActiveComponent.EffectiveThermalConductivity">EffectiveThermalConductivity (ElectrodeActiveComponent attribute)</a>
@@ -163,7 +181,7 @@
 </li>
       <li><a href="inputs.html#Electrochemistry.ElectroChemicalComponentInputParams">ElectroChemicalComponentInputParams (class in Electrochemistry)</a>
 </li>
-      <li><a href="electrodes.html#module-Electrochemistry">Electrochemistry (module)</a>, <a href="electrodes.html#module-Electrochemistry">[1]</a>, <a href="electrolyte.html#module-Electrochemistry">[2]</a>, <a href="genmodels.html#module-Electrochemistry">[3]</a>
+      <li><a href="electrodes.html#module-Electrochemistry">Electrochemistry (module)</a>, <a href="electrolyte.html#module-Electrochemistry">[1]</a>, <a href="genmodels.html#module-Electrochemistry">[2]</a>
 </li>
       <li><a href="electrodes.html#module-Electrochemistry.Electrodes">Electrochemistry.Electrodes (module)</a>, <a href="electrodes.html#module-Electrochemistry.Electrodes">[1]</a>
 </li>
@@ -176,6 +194,8 @@
       <ul>
         <li><a href="electrodes.html#Electrochemistry.Electrodes.Electrode.ElectrodeActiveComponent">(Electrode attribute)</a>
 </li>
+        <li><a href="inputs.html#Electrochemistry.Electrodes.ElectrodeInputParams.ElectrodeActiveComponent">(ElectrodeInputParams attribute)</a>
+</li>
       </ul></li>
       <li><a href="inputs.html#Electrochemistry.ElectrodeActiveComponentInputParams">ElectrodeActiveComponentInputParams (class in Electrochemistry)</a>
 </li>
@@ -184,12 +204,16 @@
       <li><a href="batterymodel.html#Battery.Battery.Electrolyte">Electrolyte (Battery attribute)</a>
 
       <ul>
+        <li><a href="inputs.html#Battery.BatteryInputParams.Electrolyte">(BatteryInputParams attribute)</a>
+</li>
         <li><a href="electrolyte.html#Electrochemistry.Electrolyte">(class in Electrochemistry)</a>
 </li>
       </ul></li>
       <li><a href="inputs.html#Electrochemistry.ElectrolyteInputParams">ElectrolyteInputParams (class in Electrochemistry)</a>
 </li>
       <li><a href="genmodels.html#Electrochemistry.ElectronicComponent">ElectronicComponent (class in Electrochemistry)</a>
+</li>
+      <li><a href="genmodels.html#Electrochemistry.ElectronicComponent.ElectronicComponent">ElectronicComponent() (ElectronicComponent method)</a>
 </li>
       <li><a href="inputs.html#Electrochemistry.ElectronicComponentInputParams">ElectronicComponentInputParams (class in Electrochemistry)</a>
 </li>
@@ -199,10 +223,16 @@
 <h2 id="G">G</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="batterymodel.html#Battery.Battery.getEquations">getEquations() (Battery method)</a>
+      <li><a href="inputs.html#Electrochemistry.Electrodes.ActiveMaterialInputParams.G">G (ActiveMaterialInputParams attribute)</a>
+
+      <ul>
+        <li><a href="inputs.html#Battery.BatteryInputParams.G">(BatteryInputParams attribute)</a>
 </li>
+      </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="batterymodel.html#Battery.Battery.getEquations">getEquations() (Battery method)</a>
+</li>
       <li><a href="batterymodel.html#Battery.Battery.getVariablesToUses">getVariablesToUses() (Battery method)</a>
 </li>
   </ul></td>
@@ -224,10 +254,26 @@
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="batterymodel.html#Battery.Battery.initT">initT (Battery attribute)</a>
+
+      <ul>
+        <li><a href="inputs.html#Battery.BatteryInputParams.initT">(BatteryInputParams attribute)</a>
 </li>
+      </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="electrodes.html#Electrochemistry.ElectrodeActiveComponent.InterDiffusionCoefficient">InterDiffusionCoefficient (ElectrodeActiveComponent attribute)</a>
+
+      <ul>
+        <li><a href="inputs.html#Electrochemistry.ElectrodeActiveComponentInputParams.InterDiffusionCoefficient">(ElectrodeActiveComponentInputParams attribute)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="L">L</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="inputs.html#Electrochemistry.Electrodes.ActiveMaterialInputParams.Li">Li (ActiveMaterialInputParams attribute)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -235,8 +281,22 @@
 <h2 id="N">N</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="batterymodel.html#Battery.Battery.NegativeElectrode">NegativeElectrode (Battery attribute)</a>
+      <li><a href="inputs.html#Electrochemistry.Electrodes.ActiveMaterialInputParams.n">n (ActiveMaterialInputParams attribute)</a>
 </li>
+      <li><a href="inputs.html#Electrochemistry.Electrodes.ActiveMaterialInputParams.name">name (ActiveMaterialInputParams attribute)</a>
+
+      <ul>
+        <li><a href="inputs.html#Electrochemistry.ElectrolyteInputParams.name">(ElectrolyteInputParams attribute)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="batterymodel.html#Battery.Battery.NegativeElectrode">NegativeElectrode (Battery attribute)</a>
+
+      <ul>
+        <li><a href="inputs.html#Battery.BatteryInputParams.NegativeElectrode">(BatteryInputParams attribute)</a>
+</li>
+      </ul></li>
   </ul></td>
 </tr></table>
 
@@ -248,6 +308,18 @@
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="batterymodel.html#Battery.Battery.PositiveElectrode">PositiveElectrode (Battery attribute)</a>
+
+      <ul>
+        <li><a href="inputs.html#Battery.BatteryInputParams.PositiveElectrode">(BatteryInputParams attribute)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="R">R</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="inputs.html#Electrochemistry.Electrodes.ActiveMaterialInputParams.rp">rp (ActiveMaterialInputParams attribute)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -267,10 +339,10 @@
 </li>
       <li><a href="batterymodel.html#Battery.Battery.setupElectrolyte">setupElectrolyte() (Battery method)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="batterymodel.html#Battery.Battery.setupElectrolyteModel">setupElectrolyteModel() (Battery method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="batterymodel.html#Battery.Battery.setupExternalCouplingNegativeElectrode">setupExternalCouplingNegativeElectrode() (Battery method)</a>
 </li>
       <li><a href="batterymodel.html#Battery.Battery.setupExternalCouplingPositiveElectrode">setupExternalCouplingPositiveElectrode() (Battery method)</a>
@@ -280,7 +352,11 @@
       <li><a href="batterymodel.html#Battery.Battery.setupThermalModel">setupThermalModel() (Battery method)</a>
 </li>
       <li><a href="batterymodel.html#Battery.Battery.SOC">SOC (Battery attribute)</a>
+
+      <ul>
+        <li><a href="inputs.html#Battery.BatteryInputParams.SOC">(BatteryInputParams attribute)</a>
 </li>
+      </ul></li>
       <li><a href="electrolyte.html#Electrochemistry.Electrolyte.sp">sp (Electrolyte attribute)</a>
 </li>
   </ul></td>
@@ -291,9 +367,17 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="electrodes.html#Electrochemistry.ElectrodeActiveComponent.thermalConductivity">thermalConductivity (ElectrodeActiveComponent attribute)</a>
 </li>
+      <li><a href="batterymodel.html#Battery.Battery.ThermalModel">ThermalModel (Battery attribute)</a>
+
+      <ul>
+        <li><a href="inputs.html#Battery.BatteryInputParams.ThermalModel">(BatteryInputParams attribute)</a>
+</li>
+      </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="batterymodel.html#Battery.Battery.ThermalModel">ThermalModel (Battery attribute)</a>
+      <li><a href="inputs.html#Electrochemistry.Electrodes.ActiveMaterialInputParams.theta0">theta0 (ActiveMaterialInputParams attribute)</a>
+</li>
+      <li><a href="inputs.html#Electrochemistry.Electrodes.ActiveMaterialInputParams.theta100">theta100 (ActiveMaterialInputParams attribute)</a>
 </li>
       <li><a href="electrodes.html#Electrochemistry.ElectrodeActiveComponent.thickness">thickness (ElectrodeActiveComponent attribute)</a>
 </li>
@@ -304,7 +388,11 @@
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="batterymodel.html#Battery.Battery.Ucut">Ucut (Battery attribute)</a>
+
+      <ul>
+        <li><a href="inputs.html#Battery.BatteryInputParams.Ucut">(BatteryInputParams attribute)</a>
 </li>
+      </ul></li>
       <li><a href="batterymodel.html#Battery.Battery.updateAccumTerms">updateAccumTerms() (Battery method)</a>
 </li>
       <li><a href="genmodels.html#Electrochemistry.ElectronicComponent.updateChargeConservation">updateChargeConservation() (ElectronicComponent method)</a>
@@ -325,6 +413,8 @@
 </li>
       <li><a href="genmodels.html#Electrochemistry.ElectroChemicalComponent.updateMassFlux">updateMassFlux() (ElectroChemicalComponent method)</a>
 </li>
+      <li><a href="inputs.html#Electrochemistry.Electrodes.ActiveMaterialInputParams.updateOCPFunc">updateOCPFunc (ActiveMaterialInputParams attribute)</a>
+</li>
       <li><a href="batterymodel.html#Battery.Battery.updateTemperature">updateTemperature() (Battery method)</a>
 </li>
       <li><a href="electrodes.html#Electrochemistry.Electrodes.Electrode.updateTemperatureCoupling">updateTemperatureCoupling() (Electrode method)</a>
@@ -337,13 +427,23 @@
 </li>
       <li><a href="batterymodel.html#Battery.Battery.updateThermalReactionSourceTerms">updateThermalReactionSourceTerms() (Battery method)</a>
 </li>
+      <li><a href="batterymodel.html#module-Utilities">Utilities (module)</a>, <a href="genmodels.html#module-Utilities">[1]</a>
+</li>
   </ul></td>
 </tr></table>
 
 <h2 id="V">V</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="electrodes.html#Electrochemistry.ElectrodeActiveComponent.volumeFraction">volumeFraction (ElectrodeActiveComponent attribute)</a>
+      <li><a href="inputs.html#Electrochemistry.Electrodes.ActiveMaterialInputParams.volumeFraction">volumeFraction (ActiveMaterialInputParams attribute)</a>
+
+      <ul>
+        <li><a href="electrodes.html#Electrochemistry.ElectrodeActiveComponent.volumeFraction">(ElectrodeActiveComponent attribute)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="inputs.html#Electrochemistry.Electrodes.ActiveMaterialInputParams.volumetricSurfaceArea">volumetricSurfaceArea (ActiveMaterialInputParams attribute)</a>
 </li>
   </ul></td>
 </tr></table>

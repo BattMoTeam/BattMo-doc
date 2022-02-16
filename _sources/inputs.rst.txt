@@ -1,34 +1,42 @@
-=============
-Input classes
-=============
+================
+Input Parameters
+================
 
 We need to propagate inputs in each of submodels. To do that we use a hierarchy of input classes that is sent
 recursively to the models. The input class is named accordingly to the model it corresponds to and its source is located
 in the same folder.
 
-Generic models
-==============
-
-.. autoclass:: Electrochemistry.ElectronicComponentInputParams
-.. autoclass:: Electrochemistry.ElectroChemicalComponentInputParams
-
 Electrode components
-==========================================
+====================
 
 .. autoclass:: Electrochemistry.ElectrodeActiveComponentInputParams
+   :members:
 .. autoclass:: Electrochemistry.Electrodes.ActiveMaterialInputParams
+   :members:
 .. autoclass:: Electrochemistry.CurrentCollectorInputParams
+   :members:
 .. autoclass:: Electrochemistry.Electrodes.ElectrodeInputParams
+   :members:
 
 Electrolyte components
 ======================
 
 .. autoclass:: Electrochemistry.ElectrolyteInputParams
+   :members:
 .. autoclass:: Electrochemistry.SeparatorInputParams
+   :members:
    
 Battery
 =======
 
 .. autoclass:: Battery.BatteryInputParams
+   :members:
 
-                        
+Generic models
+==============
+
+.. autoclass:: Electrochemistry.ElectronicComponentInputParams
+   :members:
+.. autoclass:: Electrochemistry.ElectroChemicalComponentInputParams
+   :members:
+      
