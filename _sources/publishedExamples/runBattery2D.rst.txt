@@ -1,23 +1,19 @@
 
-Battery 1D model
+Battery 2D model
 ----------------
-*Generated from runBattery1D.m*
+*Generated from runBattery2D.m*
 
-.. include:: runBattery1D_.rst
+.. include:: runBattery2D_.rst
 
+Include presentation of the test case (use rst format)
 
 .. code-block:: matlab
 
   % load MRST modules
-  mrstModule add ad-core mrst-gui mpfa
-
-We create an instance of :class:`BatteryInputParams <Battery.BatteryInputParams>`. This class is used to initiate the battery simulator and it propagates all the parameters through out the submodels.
-
-.. code-block:: matlab
-
+  mrstModule add ad-core multimodel mrst-gui mpfa
+  
   % The input parameters can be given in json format. The json file is read and used to populate the paramobj object.
   jsonstruct = parseBatmoJson('JsonDatas/lithiumbattery.json');
-  
   paramobj = BatteryInputParams(jsonstruct);
   
   % Some shortcuts used for the sub-models
@@ -26,38 +22,48 @@ We create an instance of :class:`BatteryInputParams <Battery.BatteryInputParams>
   eac     = 'ElectrodeActiveComponent';
   cc      = 'CurrentCollector';
   elyte   = 'Electrolyte';
+  sep     = 'Separator';
   thermal = 'ThermalModel';
 
 
 We setup the battery geometry.
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Here, we use a 1D model and the class BatteryGenerator1D already contains the discretization parameters
+Here, we use a 2D model and the class BatteryGenerator2D already contains the discretization parameters
 
 .. code-block:: matlab
 
-  gen = BatteryGenerator1D();
-  gen.fac = 10;
-  gen = gen.applyResolutionFactors();
-  
+  gen = BatteryGenerator2D();
   % We update pamobj with grid data
   paramobj = gen.updateBatteryInputParams(paramobj);
-  
-  % In this case, we change some of the values of the paramaters that were given in the json file to other values. This is
-  % done directly on the object paramobj.
   paramobj.(ne).(cc).EffectiveElectricalConductivity = 1e5;
   paramobj.(pe).(cc).EffectiveElectricalConductivity = 1e5;
-  paramobj.(thermal).externalTemperature = paramobj.initT;
 
 
 The Battery model is initialized by sending paramobj to the Battery class constructor
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-see :class:`Battery <Battery.Battery>`
 
 .. code-block:: matlab
 
-  model = Battery(paramobj,'use_thermal',true,'use_solid_diffusion',true);
+  model = Battery(paramobj);
+
+
+plot the model
+^^^^^^^^^^^^^^
+
+.. code-block:: matlab
+
+  figure
+  plotGrid(model.(elyte).(sep).G, 'facecolor', 'green');
+  plotGrid(model.(ne).(eac).G, 'facecolor', 'red');
+  plotGrid(model.(pe).(eac).G, 'facecolor', 'blue');
+  plotGrid(model.(ne).(cc).G, 'facecolor', 'yellow');
+  plotGrid(model.(pe).(cc).G, 'facecolor', 'yellow');
   
-  model.AutoDiffBackend= AutoDiffBackend();
+  legend({'separator', 'negative electrode (active material)', 'positive electrode (active material)', ['current ' ...
+                      'collector']}, 'location', 'south west'),
+
+.. figure:: runBattery2D_01.png
+  :figwidth: 100%
 
 
 We compute the cell capacity and chose a discharge rate
@@ -66,7 +72,7 @@ We compute the cell capacity and chose a discharge rate
 .. code-block:: matlab
 
   C      = computeCellCapacity(model);
-  CRate  = 1;
+  CRate = 1;
   inputI = (C/hour)*CRate; % current
 
 
@@ -82,15 +88,17 @@ We use different time step for the activation phase (small time steps) and the f
 
 .. code-block:: matlab
 
-  % We start with rampup time steps to go through the activation phase
-  fac=2;
-  total = 1.4*hour/CRate;
-  n=10;
-  dt0=total*1e-6;
-  times = getTimeSteps(dt0,n, total,fac);
-  dt= diff(times);
-  step = struct('val',diff(times),'control',ones(size(dt)));
-  
+  % We use exponentially increasing time step for the activation phase
+  n = 25;
+  dt = [];
+  dt = [dt; repmat(0.5e-4, n, 1).*1.5.^[1:n]'];
+  % We choose time steps for the rest of the simulation (discharge phase)
+  totalTime = 1.4*hour/CRate;
+  n = 40;
+  dt    = [dt; repmat(totalTime/n, n, 1)];
+  times = [0; cumsum(dt)];
+  tt = times(2 : end);
+  step = struct('val', diff(times), 'control', ones(numel(tt), 1));
   
   % We set up a stopping function. Here, the simulation will stop if the output voltage reach a value smaller than 2. This
   % stopping function will not be triggered in this case as we switch to voltage control when E=3.6 (see value of inputE
@@ -100,7 +108,7 @@ We use different time step for the activation phase (small time steps) and the f
   stopFunc = @(model, state, state_prev) (state.(pe).(cc).E < 2.0);
   
   tup = 0.1; % rampup value for the current function, see rampupSwitchControl
-  inputE = 3.0; % Value when current control switches to voltage control
+  inputE = 3; % Value when current control switches to voltage control
   srcfunc = @(time, I, E) rampupSwitchControl(time, tup, I, E, inputI, inputE);
   
   % we setup the control by assigning a source and stop function.
@@ -123,27 +131,32 @@ We setup the initial state
   nls.maxIterations = 10;
   % Change default behavior of nonlinear solver, in case of error
   nls.errorOnFailure = false;
-  nls.timeStepSelector=StateChangeTimeStepSelector('TargetProps',{{'PositiveElectrode','CurrentCollector','E'}},'targetChangeAbs',0.03);
+  % Timestep selector
+  nls.timeStepSelector = StateChangeTimeStepSelector('TargetProps', ...
+                                                    {{'PositiveElectrode', 'CurrentCollector', 'E'}}, ...
+                                                    'targetChangeAbs', 0.03);
+  
   % Change default tolerance for nonlinear solver
-  model.nonlinearTolerance = 1e-3*inputI;
-  % Set verbosity
+  model.nonlinearTolerance = 1e-5;
+  % Set verbosity of the solver (if true, value of the residuals for every equation is given)
   model.verbose = true;
   
   % Run simulation
-  
-  [wellSols, states, report] = simulateScheduleAD(initstate, model, schedule, 'OutputMinisteps', true, 'NonLinearSolver', nls);
+  [wellSols, states, report] = simulateScheduleAD(initstate, model, schedule, ...
+                                                  'OutputMinisteps', true, ...
+                                                  'NonLinearSolver', nls);
 
 
 .. code-block:: none
 
-  Solving timestep 01/18:                                          -> 3 Seconds, 937 Milliseconds
+  Solving timestep 01/65:                                           -> 
   ============================================================================================================================================================================================================================================================================================================================================
   | It # | elyte_massCons (cell) | elyte_chargeCons (cell) | ne_eac_massCons (cell) | ne_eac_chargeCons (cell) | ne_eac_am_soliddiffeq (sdiff) | pe_eac_massCons (cell) | pe_eac_chargeCons (cell) | pe_eac_am_soliddiffeq (cdiff) | ne_cc_chargeCons (cell) | pe_cc_chargeCons (cell) | energyCons (cell) | EIeq (cell) | controlEq (cntrl) |
   ============================================================================================================================================================================================================================================================================================================================================
-  |    1 |*0.00e+00              |*0.00e+00                |*0.00e+00               |*0.00e+00                 |*0.00e+00                      |*0.00e+00               |*0.00e+00                 |*0.00e+00                      |*0.00e+00                |*0.00e+00                |*0.00e+00          |*0.00e+00    | 3.11e+01          |
-  |    2 |*1.25e-02              |*1.29e-02                |*1.33e-02               |*1.33e-02                 |*2.40e-02                      |*1.09e-02               |*1.09e-02                 | 6.26e-02                      |*1.99e-12                |*5.92e-04                |*1.32e-02          |*5.20e-04    |*0.00e+00          |
-  |    3 |*8.38e-06              |*1.23e-05                |*1.21e-05               |*1.21e-05                 |*2.25e-05                      |*3.72e-06               |*3.70e-06                 |*2.26e-05                      |*3.30e-13                |*5.92e-04                |*1.68e-04          |*5.20e-04    |*0.00e+00          |
+  |    1 |*0.00e+00              |*0.00e+00                |*0.00e+00               |*0.00e+00                 |*0.00e+00                      |*0.00e+00               |*0.00e+00                 |*0.00e+00                      |*0.00e+00                |*0.00e+00                |*0.00e+00          |*0.00e+00    |*6.56e-07          |
+  |    2 |*6.47e-14              |*6.99e-15                |*6.21e-12               |*7.86e-17                 |*1.87e-11                      |*4.99e-12               |*4.04e-11                 |*5.12e-10                      |*1.45e-16                |*9.60e-08                |*7.95e-11          |*4.10e-14    |*0.00e+00          |
   ============================================================================================================================================================================================================================================================================================================================================
+  Solving timestep 02/65:                                           -> 
   ...
 
 
@@ -156,8 +169,6 @@ We process output and recover the output voltage and current from the output sta
   states = states(ind);
   Enew = cellfun(@(x) x.(pe).(cc).E, states);
   Inew = cellfun(@(x) x.(pe).(cc).I, states);
-  Tmax = cellfun(@(x) max(x.ThermalModel.T), states);
-  [SOCN,SOCP] =  cellfun(@(x) model.calculateSOC(x), states);
   time = cellfun(@(x) x.time, states);
 
 
@@ -166,7 +177,7 @@ We plot the the output voltage and current
 
 .. code-block:: matlab
 
-  igure
+  figure
   plot((time/hour), Enew, '*-', 'linewidth', 3)
   title('Potential (E)')
   xlabel('time (hours)')
@@ -175,27 +186,24 @@ We plot the the output voltage and current
   plot((time/hour), Inew, '*-', 'linewidth', 3)
   title('Current (I)')
   xlabel('time (hours)')
-  
-  figure
-  plot((time/hour), Tmax, '*-', 'linewidth', 3)
-  title('max(T)')
-  xlabel('time (hours)')
-  
-  figure
-  plot((time/hour), [SOCP,SOCN], '*-', 'linewidth', 3)
-  title('SOC')
-  xlabel('time (hours)')
-  legend('SOC positive','SOC negative')
 
-.. figure:: runBattery1D_01.png
+.. figure:: runBattery2D_02.png
   :figwidth: 100%
 
-.. figure:: runBattery1D_02.png
+.. figure:: runBattery2D_03.png
   :figwidth: 100%
 
-.. figure:: runBattery1D_03.png
-  :figwidth: 100%
 
-.. figure:: runBattery1D_04.png
+Plot of the lithium concentration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: matlab
+
+  igure
+  plotCellData(model.(elyte).G, states{50}.(elyte).c, 'edgealpha', 0.1);
+  title('Lithium concentration in Electrolyte at time step 50')
+  colorbar
+
+.. figure:: runBattery2D_04.png
   :figwidth: 100%
 

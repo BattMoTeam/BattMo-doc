@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Battery model &mdash; BATMO  documentation</title>
+  <title>Battery model &mdash; BattMo  documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -16,9 +16,7 @@
         <script src="_static/doctools.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Generic models" href="genmodels.html" />
-    <link rel="prev" title="Battery 1D model" href="publishedExamples/runBattery1D.html" /> 
+    <link rel="search" title="Search" href="search.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -26,7 +24,8 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> BATMO
+            <a href="index.html" class="icon icon-home"> BattMo
+            <img src="_static/battmologo.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -36,14 +35,11 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation instruction</a></li>
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
 <li class="toctree-l1"><a class="reference internal" href="inputs.html">Input Parameters</a></li>
-<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Battery model</a></li>
-<li class="toctree-l1"><a class="reference internal" href="genmodels.html">Generic models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="electrodes.html">Electrode components</a></li>
-<li class="toctree-l1"><a class="reference internal" href="electrolyte.html">Electrolyte components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mrst.html">MRST</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bibliography.html">Reference lists</a></li>
 </ul>
 
@@ -53,7 +49,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">BATMO</a>
+          <a href="index.html">BattMo</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -94,19 +90,25 @@
 <dl class="mat attribute">
 <dt class="sig sig-object mat" id="Battery.Battery.NegativeElectrode">
 <span class="sig-name descname"><span class="pre">NegativeElectrode</span></span><a class="headerlink" href="#Battery.Battery.NegativeElectrode" title="Permalink to this definition"></a></dt>
-<dd><p>Negative Electrode Model, instance of <a class="reference internal" href="electrodes.html#Electrochemistry.Electrodes.Electrode" title="Electrochemistry.Electrodes.Electrode"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">Electrode</span></code></a></p>
+<dd><p>Negative Electrode Model, instance of <code class="xref mat mat-class docutils literal notranslate"><span class="pre">Electrode</span></code></p>
 </dd></dl>
 
 <dl class="mat attribute">
 <dt class="sig sig-object mat" id="Battery.Battery.PositiveElectrode">
 <span class="sig-name descname"><span class="pre">PositiveElectrode</span></span><a class="headerlink" href="#Battery.Battery.PositiveElectrode" title="Permalink to this definition"></a></dt>
-<dd><p>Positive Electrode Model, instance of <a class="reference internal" href="electrodes.html#Electrochemistry.Electrodes.Electrode" title="Electrochemistry.Electrodes.Electrode"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">Electrode</span></code></a></p>
+<dd><p>Positive Electrode Model, instance of <code class="xref mat mat-class docutils literal notranslate"><span class="pre">Electrode</span></code></p>
 </dd></dl>
 
 <dl class="mat attribute">
 <dt class="sig sig-object mat" id="Battery.Battery.ThermalModel">
 <span class="sig-name descname"><span class="pre">ThermalModel</span></span><a class="headerlink" href="#Battery.Battery.ThermalModel" title="Permalink to this definition"></a></dt>
 <dd><p>Thermal model, instance of <code class="xref mat mat-class docutils literal notranslate"><span class="pre">ThermalComponent</span></code></p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="Battery.Battery.Control">
+<span class="sig-name descname"><span class="pre">Control</span></span><a class="headerlink" href="#Battery.Battery.Control" title="Permalink to this definition"></a></dt>
+<dd><p>Control Model</p>
 </dd></dl>
 
 <dl class="mat attribute">
@@ -122,12 +124,6 @@
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="Battery.Battery.Ucut">
-<span class="sig-name descname"><span class="pre">Ucut</span></span><a class="headerlink" href="#Battery.Battery.Ucut" title="Permalink to this definition"></a></dt>
-<dd><p>Voltage cut</p>
-</dd></dl>
-
-<dl class="mat attribute">
 <dt class="sig sig-object mat" id="Battery.Battery.couplingTerms">
 <span class="sig-name descname"><span class="pre">couplingTerms</span></span><a class="headerlink" href="#Battery.Battery.couplingTerms" title="Permalink to this definition"></a></dt>
 <dd><p>Coupling terms</p>
@@ -137,6 +133,13 @@
 <dt class="sig sig-object mat" id="Battery.Battery.cmin">
 <span class="sig-name descname"><span class="pre">cmin</span></span><a class="headerlink" href="#Battery.Battery.cmin" title="Permalink to this definition"></a></dt>
 <dd><p>mininum concentration used in capping</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="Battery.Battery.registerVarAndPropfuncNames">
+<span class="sig-name descname"><span class="pre">registerVarAndPropfuncNames</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">model</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Battery.Battery.registerVarAndPropfuncNames" title="Permalink to this definition"></a></dt>
+<dd><p>Declaration of the Dynamical Variables and Function of the model
+(setup of varnameList and propertyFunctionList)</p>
 </dd></dl>
 
 <dl class="mat method">
@@ -150,7 +153,7 @@
 <dt class="sig sig-object mat" id="Battery.Battery.setupElectrode">
 <span class="sig-name descname"><span class="pre">setupElectrode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">model</span></em>, <em class="sig-param"><span class="pre">paramobj</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Battery.Battery.setupElectrode" title="Permalink to this definition"></a></dt>
 <dd><p>Setup the electrode models (both <a class="reference internal" href="#Battery.Battery.NegativeElectrode" title="Battery.Battery.NegativeElectrode"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">NegativeElectrode</span></code></a> and <a class="reference internal" href="#Battery.Battery.PositiveElectrode" title="Battery.Battery.PositiveElectrode"><code class="xref mat mat-attr docutils literal notranslate"><span class="pre">PositiveElectrode</span></code></a>). Here, <code class="code docutils literal notranslate"><span class="pre">paramobj</span></code>
-is instance of <a class="reference internal" href="inputs.html#Electrochemistry.Electrodes.ElectrodeInputParams" title="Electrochemistry.Electrodes.ElectrodeInputParams"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">ElectrodeInputParams</span></code></a></p>
+is instance of <code class="xref mat mat-class docutils literal notranslate"><span class="pre">ElectrodeInputParams</span></code></p>
 </dd></dl>
 
 <dl class="mat method">
@@ -187,7 +190,7 @@ is instance of <a class="reference internal" href="inputs.html#Electrochemistry.
 <dl class="mat method">
 <dt class="sig sig-object mat" id="Battery.Battery.getVariablesToUses">
 <span class="sig-name descname"><span class="pre">getVariablesToUses</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">model</span></em>, <em class="sig-param"><span class="pre">neq</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Battery.Battery.getVariablesToUses" title="Permalink to this definition"></a></dt>
-<dd><p>reduction will not work if not this is equalt to equations: if need one need to change LinearSolverAD.m</p>
+<dd><p>reduction will not work if not this is equal to equations: if need one need to change LinearSolverAD.m</p>
 </dd></dl>
 
 <dl class="mat method">
@@ -254,10 +257,7 @@ rate.</p>
 
            </div>
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="publishedExamples/runBattery1D.html" class="btn btn-neutral float-left" title="Battery 1D model" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="genmodels.html" class="btn btn-neutral float-right" title="Generic models" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-    </div>
+          <footer>
 
   <hr/>
 

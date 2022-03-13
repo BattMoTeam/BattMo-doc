@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Index &mdash; BATMO  documentation</title>
+  <title>Index &mdash; BattMo  documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -24,7 +24,8 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> BATMO
+            <a href="index.html" class="icon icon-home"> BattMo
+            <img src="_static/battmologo.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -35,13 +36,10 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation instruction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
 <li class="toctree-l1"><a class="reference internal" href="inputs.html">Input Parameters</a></li>
-<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="batterymodel.html">Battery model</a></li>
-<li class="toctree-l1"><a class="reference internal" href="genmodels.html">Generic models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="electrodes.html">Electrode components</a></li>
-<li class="toctree-l1"><a class="reference internal" href="electrolyte.html">Electrolyte components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mrst.html">MRST</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bibliography.html">Reference lists</a></li>
 </ul>
 
@@ -51,7 +49,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">BATMO</a>
+          <a href="index.html">BattMo</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -80,7 +78,6 @@
  | <a href="#G"><strong>G</strong></a>
  | <a href="#H"><strong>H</strong></a>
  | <a href="#I"><strong>I</strong></a>
- | <a href="#L"><strong>L</strong></a>
  | <a href="#N"><strong>N</strong></a>
  | <a href="#P"><strong>P</strong></a>
  | <a href="#R"><strong>R</strong></a>
@@ -93,17 +90,13 @@
 <h2 id="A">A</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="electrodes.html#Electrochemistry.Electrodes.ActiveMaterial">ActiveMaterial (class in Electrochemistry.Electrodes)</a>
-
-      <ul>
-        <li><a href="electrodes.html#Electrochemistry.ElectrodeActiveComponent.ActiveMaterial">(ElectrodeActiveComponent attribute)</a>
+      <li><a href="inputs.html#Electrochemistry.ElectrodeInputParams.ActiveMaterial">ActiveMaterial (ElectrodeInputParams attribute)</a>
 </li>
-        <li><a href="inputs.html#Electrochemistry.ElectrodeActiveComponentInputParams.ActiveMaterial">(ElectrodeActiveComponentInputParams attribute)</a>
-</li>
-      </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="inputs.html#Electrochemistry.Electrodes.ActiveMaterialInputParams">ActiveMaterialInputParams (class in Electrochemistry.Electrodes)</a>
+      <li><a href="inputs.html#Electrochemistry.ActiveMaterialInputParams">ActiveMaterialInputParams (class in Electrochemistry)</a>
+</li>
+      <li><a href="genmodels.html#Utilities.BaseModel.addVariable">addVariable() (BaseModel method)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -129,28 +122,34 @@
 <h2 id="C">C</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="inputs.html#Electrochemistry.InterfaceInputParams.cmax">cmax (InterfaceInputParams attribute)</a>
+</li>
       <li><a href="batterymodel.html#Battery.Battery.cmin">cmin (Battery attribute)</a>
 </li>
+      <li><a href="batterymodel.html#Battery.Battery.Control">Control (Battery attribute)</a>
+
+      <ul>
+        <li><a href="inputs.html#Battery.BatteryInputParams.Control">(BatteryInputParams attribute)</a>
+</li>
+      </ul></li>
       <li><a href="inputs.html#Electrochemistry.CurrentCollectorInputParams.couplingTerm">couplingTerm (CurrentCollectorInputParams attribute)</a>
 
       <ul>
-        <li><a href="inputs.html#Electrochemistry.Electrodes.ElectrodeInputParams.couplingTerm">(ElectrodeInputParams attribute)</a>
+        <li><a href="inputs.html#Electrochemistry.ElectrodeInputParams.couplingTerm">(ElectrodeInputParams attribute)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="batterymodel.html#Battery.Battery.couplingTerms">couplingTerms (Battery attribute)</a>
 
       <ul>
         <li><a href="inputs.html#Battery.BatteryInputParams.couplingTerms">(BatteryInputParams attribute)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="electrodes.html#Electrochemistry.CurrentCollector">CurrentCollector (class in Electrochemistry)</a>
 
       <ul>
-        <li><a href="electrodes.html#Electrochemistry.Electrodes.Electrode.CurrentCollector">(Electrode attribute)</a>
-</li>
-        <li><a href="inputs.html#Electrochemistry.Electrodes.ElectrodeInputParams.CurrentCollector">(ElectrodeInputParams attribute)</a>
+        <li><a href="inputs.html#Electrochemistry.ElectrodeInputParams.CurrentCollector">(ElectrodeInputParams attribute)</a>
 </li>
       </ul></li>
       <li><a href="inputs.html#Electrochemistry.CurrentCollectorInputParams">CurrentCollectorInputParams (class in Electrochemistry)</a>
@@ -161,12 +160,14 @@
 <h2 id="D">D</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="inputs.html#Electrochemistry.Electrodes.ActiveMaterialInputParams.density">density (ActiveMaterialInputParams attribute)</a>
+      <li><a href="inputs.html#Electrochemistry.SolidDiffusionModelInputParams.D0">D0 (SolidDiffusionModelInputParams attribute)</a>
+</li>
+      <li><a href="inputs.html#Electrochemistry.CurrentCollectorInputParams.density">density (CurrentCollectorInputParams attribute)</a>
 
       <ul>
-        <li><a href="inputs.html#Electrochemistry.CurrentCollectorInputParams.density">(CurrentCollectorInputParams attribute)</a>
-</li>
         <li><a href="electrolyte.html#Electrochemistry.Electrolyte.density">(Electrolyte attribute)</a>
+</li>
+        <li><a href="inputs.html#Electrochemistry.InterfaceInputParams.density">(InterfaceInputParams attribute)</a>
 </li>
       </ul></li>
   </ul></td>
@@ -175,49 +176,27 @@
 <h2 id="E">E</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="inputs.html#Electrochemistry.Electrodes.ActiveMaterialInputParams.Eak">Eak (ActiveMaterialInputParams attribute)</a>
+      <li><a href="inputs.html#Electrochemistry.SolidDiffusionModelInputParams.EaD">EaD (SolidDiffusionModelInputParams attribute)</a>
+</li>
+      <li><a href="inputs.html#Electrochemistry.InterfaceInputParams.Eak">Eak (InterfaceInputParams attribute)</a>
 </li>
       <li><a href="genmodels.html#Electrochemistry.ElectroChemicalComponent.EffectiveDiffusionCoefficient">EffectiveDiffusionCoefficient (ElectroChemicalComponent attribute)</a>
 </li>
       <li><a href="genmodels.html#Electrochemistry.ElectronicComponent.EffectiveElectricalConductivity">EffectiveElectricalConductivity (ElectronicComponent attribute)</a>
-
-      <ul>
-        <li><a href="inputs.html#Electrochemistry.ElectronicComponentInputParams.EffectiveElectricalConductivity">(ElectronicComponentInputParams attribute)</a>
 </li>
-      </ul></li>
-      <li><a href="electrodes.html#Electrochemistry.ElectrodeActiveComponent.EffectiveHeatCapacity">EffectiveHeatCapacity (ElectrodeActiveComponent attribute)</a>
+      <li><a href="electrolyte.html#Electrochemistry.Separator.EffectiveThermalConductivity">EffectiveThermalConductivity (Separator attribute)</a>
 </li>
-      <li><a href="electrodes.html#Electrochemistry.ElectrodeActiveComponent.EffectiveThermalConductivity">EffectiveThermalConductivity (ElectrodeActiveComponent attribute)</a>
+      <li><a href="inputs.html#Electrochemistry.ActiveMaterialInputParams.electricalConductivity">electricalConductivity (ActiveMaterialInputParams attribute)</a>
 </li>
-      <li><a href="electrodes.html#Electrochemistry.ElectrodeActiveComponent.electricalConductivity">electricalConductivity (ElectrodeActiveComponent attribute)</a>
-
-      <ul>
-        <li><a href="inputs.html#Electrochemistry.ElectrodeActiveComponentInputParams.electricalConductivity">(ElectrodeActiveComponentInputParams attribute)</a>
-</li>
-      </ul></li>
       <li><a href="genmodels.html#Electrochemistry.ElectroChemicalComponent">ElectroChemicalComponent (class in Electrochemistry)</a>
-</li>
-      <li><a href="inputs.html#Electrochemistry.ElectroChemicalComponentInputParams">ElectroChemicalComponentInputParams (class in Electrochemistry)</a>
 </li>
       <li><a href="electrodes.html#module-Electrochemistry">Electrochemistry (module)</a>, <a href="electrolyte.html#module-Electrochemistry">[1]</a>, <a href="genmodels.html#module-Electrochemistry">[2]</a>
 </li>
-      <li><a href="electrodes.html#module-Electrochemistry.Electrodes">Electrochemistry.Electrodes (module)</a>, <a href="electrodes.html#module-Electrochemistry.Electrodes">[1]</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="electrodes.html#Electrochemistry.Electrodes.Electrode">Electrode (class in Electrochemistry.Electrodes)</a>
+      <li><a href="electrodes.html#Electrochemistry.ElectrodeActiveComponent">ElectrodeActiveComponent (in module Electrochemistry)</a>
 </li>
-      <li><a href="electrodes.html#Electrochemistry.ElectrodeActiveComponent">ElectrodeActiveComponent (class in Electrochemistry)</a>
-
-      <ul>
-        <li><a href="electrodes.html#Electrochemistry.Electrodes.Electrode.ElectrodeActiveComponent">(Electrode attribute)</a>
-</li>
-        <li><a href="inputs.html#Electrochemistry.Electrodes.ElectrodeInputParams.ElectrodeActiveComponent">(ElectrodeInputParams attribute)</a>
-</li>
-      </ul></li>
-      <li><a href="inputs.html#Electrochemistry.ElectrodeActiveComponentInputParams">ElectrodeActiveComponentInputParams (class in Electrochemistry)</a>
-</li>
-      <li><a href="inputs.html#Electrochemistry.Electrodes.ElectrodeInputParams">ElectrodeInputParams (class in Electrochemistry.Electrodes)</a>
+      <li><a href="inputs.html#Electrochemistry.ElectrodeInputParams">ElectrodeInputParams (class in Electrochemistry)</a>
 </li>
       <li><a href="batterymodel.html#Battery.Battery.Electrolyte">Electrolyte (Battery attribute)</a>
 
@@ -233,18 +212,16 @@
 </li>
       <li><a href="genmodels.html#Electrochemistry.ElectronicComponent.ElectronicComponent">ElectronicComponent() (ElectronicComponent method)</a>
 </li>
-      <li><a href="inputs.html#Electrochemistry.ElectronicComponentInputParams">ElectronicComponentInputParams (class in Electrochemistry)</a>
-</li>
   </ul></td>
 </tr></table>
 
 <h2 id="G">G</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="inputs.html#Electrochemistry.Electrodes.ActiveMaterialInputParams.G">G (ActiveMaterialInputParams attribute)</a>
+      <li><a href="inputs.html#Battery.BatteryInputParams.G">G (BatteryInputParams attribute)</a>
 
       <ul>
-        <li><a href="inputs.html#Battery.BatteryInputParams.G">(BatteryInputParams attribute)</a>
+        <li><a href="inputs.html#Electrochemistry.InterfaceInputParams.G">(InterfaceInputParams attribute)</a>
 </li>
       </ul></li>
   </ul></td>
@@ -253,20 +230,22 @@
 </li>
       <li><a href="batterymodel.html#Battery.Battery.getVariablesToUses">getVariablesToUses() (Battery method)</a>
 </li>
+      <li><a href="electrolyte.html#Electrochemistry.Separator.Gurley">Gurley (Separator attribute)</a>
+</li>
   </ul></td>
 </tr></table>
 
 <h2 id="H">H</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="inputs.html#Electrochemistry.CurrentCollectorInputParams.heatCapacity">heatCapacity (CurrentCollectorInputParams attribute)</a>
+      <li><a href="inputs.html#Electrochemistry.ActiveMaterialInputParams.heatCapacity">heatCapacity (ActiveMaterialInputParams attribute)</a>
 
       <ul>
-        <li><a href="electrodes.html#Electrochemistry.ElectrodeActiveComponent.heatCapacity">(ElectrodeActiveComponent attribute)</a>
-</li>
-        <li><a href="inputs.html#Electrochemistry.ElectrodeActiveComponentInputParams.heatCapacity">(ElectrodeActiveComponentInputParams attribute)</a>
+        <li><a href="inputs.html#Electrochemistry.CurrentCollectorInputParams.heatCapacity">(CurrentCollectorInputParams attribute)</a>
 </li>
         <li><a href="electrolyte.html#Electrochemistry.Electrolyte.heatCapacity">(Electrolyte attribute)</a>
+</li>
+        <li><a href="electrolyte.html#Electrochemistry.Separator.heatCapacity">(Separator attribute)</a>
 </li>
       </ul></li>
   </ul></td>
@@ -283,19 +262,11 @@
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="electrodes.html#Electrochemistry.ElectrodeActiveComponent.InterDiffusionCoefficient">InterDiffusionCoefficient (ElectrodeActiveComponent attribute)</a>
-
-      <ul>
-        <li><a href="inputs.html#Electrochemistry.ElectrodeActiveComponentInputParams.InterDiffusionCoefficient">(ElectrodeActiveComponentInputParams attribute)</a>
+      <li><a href="inputs.html#Electrochemistry.ActiveMaterialInputParams.InterDiffusionCoefficient">InterDiffusionCoefficient (ActiveMaterialInputParams attribute)</a>
 </li>
-      </ul></li>
-  </ul></td>
-</tr></table>
-
-<h2 id="L">L</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="inputs.html#Electrochemistry.Electrodes.ActiveMaterialInputParams.Li">Li (ActiveMaterialInputParams attribute)</a>
+      <li><a href="inputs.html#Electrochemistry.ActiveMaterialInputParams.Interface">Interface (ActiveMaterialInputParams attribute)</a>
+</li>
+      <li><a href="inputs.html#Electrochemistry.InterfaceInputParams">InterfaceInputParams (class in Electrochemistry)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -303,12 +274,14 @@
 <h2 id="N">N</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="inputs.html#Electrochemistry.Electrodes.ActiveMaterialInputParams.n">n (ActiveMaterialInputParams attribute)</a>
+      <li><a href="inputs.html#Electrochemistry.InterfaceInputParams.n">n (InterfaceInputParams attribute)</a>
 </li>
-      <li><a href="inputs.html#Electrochemistry.Electrodes.ActiveMaterialInputParams.name">name (ActiveMaterialInputParams attribute)</a>
+      <li><a href="inputs.html#Electrochemistry.SolidDiffusionModelInputParams.N">N (SolidDiffusionModelInputParams attribute)</a>
+</li>
+      <li><a href="inputs.html#Electrochemistry.ElectrolyteInputParams.name">name (ElectrolyteInputParams attribute)</a>
 
       <ul>
-        <li><a href="inputs.html#Electrochemistry.ElectrolyteInputParams.name">(ElectrolyteInputParams attribute)</a>
+        <li><a href="inputs.html#Electrochemistry.InterfaceInputParams.name">(InterfaceInputParams attribute)</a>
 </li>
       </ul></li>
   </ul></td>
@@ -319,14 +292,20 @@
         <li><a href="inputs.html#Battery.BatteryInputParams.NegativeElectrode">(BatteryInputParams attribute)</a>
 </li>
       </ul></li>
+      <li><a href="inputs.html#Electrochemistry.SolidDiffusionModelInputParams.np">np (SolidDiffusionModelInputParams attribute)</a>
+</li>
   </ul></td>
 </tr></table>
 
 <h2 id="P">P</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="electrodes.html#Electrochemistry.ElectrodeActiveComponent.porosity">porosity (ElectrodeActiveComponent attribute)</a>
+      <li><a href="electrolyte.html#Electrochemistry.Separator.porosity">porosity (Separator attribute)</a>
+
+      <ul>
+        <li><a href="inputs.html#Electrochemistry.SeparatorInputParams.porosity">(SeparatorInputParams attribute)</a>
 </li>
+      </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="batterymodel.html#Battery.Battery.PositiveElectrode">PositiveElectrode (Battery attribute)</a>
@@ -341,32 +320,50 @@
 <h2 id="R">R</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="inputs.html#Electrochemistry.Electrodes.ActiveMaterialInputParams.rp">rp (ActiveMaterialInputParams attribute)</a>
+      <li><a href="genmodels.html#Utilities.BaseModel.registerSubModels">registerSubModels() (BaseModel method)</a>
 </li>
+      <li><a href="batterymodel.html#Battery.Battery.registerVarAndPropfuncNames">registerVarAndPropfuncNames() (Battery method)</a>
+
+      <ul>
+        <li><a href="genmodels.html#Electrochemistry.ElectroChemicalComponent.registerVarAndPropfuncNames">(ElectroChemicalComponent method)</a>
+</li>
+        <li><a href="electrolyte.html#Electrochemistry.Electrolyte.registerVarAndPropfuncNames">(Electrolyte method)</a>
+</li>
+        <li><a href="genmodels.html#Electrochemistry.ElectronicComponent.registerVarAndPropfuncNames">(ElectronicComponent method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="electrolyte.html#Electrochemistry.Separator.rp">rp (Separator attribute)</a>
+
+      <ul>
+        <li><a href="inputs.html#Electrochemistry.SolidDiffusionModelInputParams.rp">(SolidDiffusionModelInputParams attribute)</a>
+</li>
+      </ul></li>
   </ul></td>
 </tr></table>
 
 <h2 id="S">S</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="electrolyte.html#Electrochemistry.Separator">Separator (in module Electrochemistry)</a>
+      <li><a href="electrolyte.html#Electrochemistry.Separator">Separator (class in Electrochemistry)</a>
+
+      <ul>
+        <li><a href="electrolyte.html#Electrochemistry.Electrolyte.Separator">(Electrolyte attribute)</a>
 </li>
-      <li><a href="inputs.html#Electrochemistry.SeparatorInputParams">SeparatorInputParams (in module Electrochemistry)</a>
-</li>
-      <li><a href="electrodes.html#Electrochemistry.Electrodes.Electrode.setupCurrentCollector">setupCurrentCollector() (Electrode method)</a>
+      </ul></li>
+      <li><a href="inputs.html#Electrochemistry.SeparatorInputParams">SeparatorInputParams (class in Electrochemistry)</a>
 </li>
       <li><a href="batterymodel.html#Battery.Battery.setupElectrode">setupElectrode() (Battery method)</a>
-</li>
-      <li><a href="electrodes.html#Electrochemistry.Electrodes.Electrode.setupElectrodeActiveComponent">setupElectrodeActiveComponent() (Electrode method)</a>
 </li>
       <li><a href="batterymodel.html#Battery.Battery.setupElectrolyte">setupElectrolyte() (Battery method)</a>
 </li>
       <li><a href="batterymodel.html#Battery.Battery.setupElectrolyteModel">setupElectrolyteModel() (Battery method)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="batterymodel.html#Battery.Battery.setupExternalCouplingNegativeElectrode">setupExternalCouplingNegativeElectrode() (Battery method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="batterymodel.html#Battery.Battery.setupExternalCouplingPositiveElectrode">setupExternalCouplingPositiveElectrode() (Battery method)</a>
 </li>
       <li><a href="batterymodel.html#Battery.Battery.setupInitialState">setupInitialState() (Battery method)</a>
@@ -379,7 +376,9 @@
         <li><a href="inputs.html#Battery.BatteryInputParams.SOC">(BatteryInputParams attribute)</a>
 </li>
       </ul></li>
-      <li><a href="electrolyte.html#Electrochemistry.Electrolyte.sp">sp (Electrolyte attribute)</a>
+      <li><a href="inputs.html#Electrochemistry.ActiveMaterialInputParams.SolidDiffusion">SolidDiffusion (ActiveMaterialInputParams attribute)</a>
+</li>
+      <li><a href="inputs.html#Electrochemistry.SolidDiffusionModelInputParams">SolidDiffusionModelInputParams (class in Electrochemistry)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -387,27 +386,25 @@
 <h2 id="T">T</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="inputs.html#Electrochemistry.CurrentCollectorInputParams.thermalConductivity">thermalConductivity (CurrentCollectorInputParams attribute)</a>
+      <li><a href="inputs.html#Electrochemistry.ActiveMaterialInputParams.thermalConductivity">thermalConductivity (ActiveMaterialInputParams attribute)</a>
 
       <ul>
-        <li><a href="electrodes.html#Electrochemistry.ElectrodeActiveComponent.thermalConductivity">(ElectrodeActiveComponent attribute)</a>
+        <li><a href="inputs.html#Electrochemistry.CurrentCollectorInputParams.thermalConductivity">(CurrentCollectorInputParams attribute)</a>
 </li>
-        <li><a href="inputs.html#Electrochemistry.ElectrodeActiveComponentInputParams.thermalConductivity">(ElectrodeActiveComponentInputParams attribute)</a>
+        <li><a href="electrolyte.html#Electrochemistry.Separator.thermalConductivity">(Separator attribute)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="batterymodel.html#Battery.Battery.ThermalModel">ThermalModel (Battery attribute)</a>
 
       <ul>
         <li><a href="inputs.html#Battery.BatteryInputParams.ThermalModel">(BatteryInputParams attribute)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="inputs.html#Electrochemistry.Electrodes.ActiveMaterialInputParams.theta0">theta0 (ActiveMaterialInputParams attribute)</a>
+      <li><a href="inputs.html#Electrochemistry.InterfaceInputParams.theta0">theta0 (InterfaceInputParams attribute)</a>
 </li>
-      <li><a href="inputs.html#Electrochemistry.Electrodes.ActiveMaterialInputParams.theta100">theta100 (ActiveMaterialInputParams attribute)</a>
-</li>
-      <li><a href="electrodes.html#Electrochemistry.ElectrodeActiveComponent.thickness">thickness (ElectrodeActiveComponent attribute)</a>
+      <li><a href="inputs.html#Electrochemistry.InterfaceInputParams.theta100">theta100 (InterfaceInputParams attribute)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -415,17 +412,9 @@
 <h2 id="U">U</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="batterymodel.html#Battery.Battery.Ucut">Ucut (Battery attribute)</a>
-
-      <ul>
-        <li><a href="inputs.html#Battery.BatteryInputParams.Ucut">(BatteryInputParams attribute)</a>
-</li>
-      </ul></li>
       <li><a href="batterymodel.html#Battery.Battery.updateAccumTerms">updateAccumTerms() (Battery method)</a>
 </li>
       <li><a href="genmodels.html#Electrochemistry.ElectronicComponent.updateChargeConservation">updateChargeConservation() (ElectronicComponent method)</a>
-</li>
-      <li><a href="electrodes.html#Electrochemistry.Electrodes.Electrode.updateCoupling">updateCoupling() (Electrode method)</a>
 </li>
       <li><a href="genmodels.html#Electrochemistry.ElectronicComponent.updateCurrent">updateCurrent() (ElectronicComponent method)</a>
 </li>
@@ -435,17 +424,15 @@
 </li>
       <li><a href="batterymodel.html#Battery.Battery.updateElectrolyteCoupling">updateElectrolyteCoupling() (Battery method)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="genmodels.html#Electrochemistry.ElectroChemicalComponent.updateMassConservation">updateMassConservation() (ElectroChemicalComponent method)</a>
 </li>
       <li><a href="genmodels.html#Electrochemistry.ElectroChemicalComponent.updateMassFlux">updateMassFlux() (ElectroChemicalComponent method)</a>
 </li>
-      <li><a href="inputs.html#Electrochemistry.Electrodes.ActiveMaterialInputParams.updateOCPFunc">updateOCPFunc (ActiveMaterialInputParams attribute)</a>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="inputs.html#Electrochemistry.InterfaceInputParams.updateOCPFunc">updateOCPFunc (InterfaceInputParams attribute)</a>
 </li>
       <li><a href="batterymodel.html#Battery.Battery.updateTemperature">updateTemperature() (Battery method)</a>
-</li>
-      <li><a href="electrodes.html#Electrochemistry.Electrodes.Electrode.updateTemperatureCoupling">updateTemperatureCoupling() (Electrode method)</a>
 </li>
       <li><a href="batterymodel.html#Battery.Battery.updateThermalAccumTerms">updateThermalAccumTerms() (Battery method)</a>
 </li>
@@ -455,6 +442,8 @@
 </li>
       <li><a href="batterymodel.html#Battery.Battery.updateThermalReactionSourceTerms">updateThermalReactionSourceTerms() (Battery method)</a>
 </li>
+      <li><a href="inputs.html#Electrochemistry.SolidDiffusionModelInputParams.useSimplifiedDiffusionModel">useSimplifiedDiffusionModel (SolidDiffusionModelInputParams attribute)</a>
+</li>
       <li><a href="batterymodel.html#module-Utilities">Utilities (module)</a>, <a href="genmodels.html#module-Utilities">[1]</a>
 </li>
   </ul></td>
@@ -463,12 +452,20 @@
 <h2 id="V">V</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="inputs.html#Electrochemistry.Electrodes.ActiveMaterialInputParams.volumeFraction">volumeFraction (ActiveMaterialInputParams attribute)</a>
+      <li><a href="inputs.html#Electrochemistry.InterfaceInputParams.volumeFraction">volumeFraction (InterfaceInputParams attribute)</a>
+
+      <ul>
+        <li><a href="electrolyte.html#Electrochemistry.Separator.volumeFraction">(Separator attribute)</a>
 </li>
+      </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="inputs.html#Electrochemistry.Electrodes.ActiveMaterialInputParams.volumetricSurfaceArea">volumetricSurfaceArea (ActiveMaterialInputParams attribute)</a>
+      <li><a href="inputs.html#Electrochemistry.InterfaceInputParams.volumetricSurfaceArea">volumetricSurfaceArea (InterfaceInputParams attribute)</a>
+
+      <ul>
+        <li><a href="inputs.html#Electrochemistry.SolidDiffusionModelInputParams.volumetricSurfaceArea">(SolidDiffusionModelInputParams attribute)</a>
 </li>
+      </ul></li>
   </ul></td>
 </tr></table>
 
