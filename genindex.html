@@ -78,6 +78,7 @@
  | <a href="#G"><strong>G</strong></a>
  | <a href="#H"><strong>H</strong></a>
  | <a href="#I"><strong>I</strong></a>
+ | <a href="#K"><strong>K</strong></a>
  | <a href="#N"><strong>N</strong></a>
  | <a href="#P"><strong>P</strong></a>
  | <a href="#R"><strong>R</strong></a>
@@ -126,6 +127,8 @@
 </li>
       <li><a href="batterymodel.html#Battery.Battery.cmin">cmin (Battery attribute)</a>
 </li>
+      <li><a href="inputs.html#Electrochemistry.ElectrolyteInputParams.compnames">compnames (ElectrolyteInputParams attribute)</a>
+</li>
       <li><a href="batterymodel.html#Battery.Battery.Control">Control (Battery attribute)</a>
 
       <ul>
@@ -167,7 +170,11 @@
       <ul>
         <li><a href="electrolyte.html#Electrochemistry.Electrolyte.density">(Electrolyte attribute)</a>
 </li>
+        <li><a href="inputs.html#Electrochemistry.ElectrolyteInputParams.density">(ElectrolyteInputParams attribute)</a>
+</li>
         <li><a href="inputs.html#Electrochemistry.InterfaceInputParams.density">(InterfaceInputParams attribute)</a>
+</li>
+        <li><a href="inputs.html#Electrochemistry.SeparatorInputParams.density">(SeparatorInputParams attribute)</a>
 </li>
       </ul></li>
   </ul></td>
@@ -230,8 +237,6 @@
 </li>
       <li><a href="batterymodel.html#Battery.Battery.getVariablesToUses">getVariablesToUses() (Battery method)</a>
 </li>
-      <li><a href="electrolyte.html#Electrochemistry.Separator.Gurley">Gurley (Separator attribute)</a>
-</li>
   </ul></td>
 </tr></table>
 
@@ -245,7 +250,11 @@
 </li>
         <li><a href="electrolyte.html#Electrochemistry.Electrolyte.heatCapacity">(Electrolyte attribute)</a>
 </li>
+        <li><a href="inputs.html#Electrochemistry.ElectrolyteInputParams.heatCapacity">(ElectrolyteInputParams attribute)</a>
+</li>
         <li><a href="electrolyte.html#Electrochemistry.Separator.heatCapacity">(Separator attribute)</a>
+</li>
+        <li><a href="inputs.html#Electrochemistry.SeparatorInputParams.heatCapacity">(SeparatorInputParams attribute)</a>
 </li>
       </ul></li>
   </ul></td>
@@ -267,6 +276,14 @@
       <li><a href="inputs.html#Electrochemistry.ActiveMaterialInputParams.Interface">Interface (ActiveMaterialInputParams attribute)</a>
 </li>
       <li><a href="inputs.html#Electrochemistry.InterfaceInputParams">InterfaceInputParams (class in Electrochemistry)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="K">K</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="inputs.html#Electrochemistry.InterfaceInputParams.k0">k0 (InterfaceInputParams attribute)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -334,12 +351,8 @@
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="electrolyte.html#Electrochemistry.Separator.rp">rp (Separator attribute)</a>
-
-      <ul>
-        <li><a href="inputs.html#Electrochemistry.SolidDiffusionModelInputParams.rp">(SolidDiffusionModelInputParams attribute)</a>
+      <li><a href="inputs.html#Electrochemistry.SolidDiffusionModelInputParams.rp">rp (SolidDiffusionModelInputParams attribute)</a>
 </li>
-      </ul></li>
   </ul></td>
 </tr></table>
 
@@ -350,6 +363,8 @@
 
       <ul>
         <li><a href="electrolyte.html#Electrochemistry.Electrolyte.Separator">(Electrolyte attribute)</a>
+</li>
+        <li><a href="inputs.html#Electrochemistry.ElectrolyteInputParams.Separator">(ElectrolyteInputParams attribute)</a>
 </li>
       </ul></li>
       <li><a href="inputs.html#Electrochemistry.SeparatorInputParams">SeparatorInputParams (class in Electrochemistry)</a>
@@ -380,6 +395,8 @@
 </li>
       <li><a href="inputs.html#Electrochemistry.SolidDiffusionModelInputParams">SolidDiffusionModelInputParams (class in Electrochemistry)</a>
 </li>
+      <li><a href="inputs.html#Electrochemistry.ElectrolyteInputParams.sp">sp (ElectrolyteInputParams attribute)</a>
+</li>
   </ul></td>
 </tr></table>
 
@@ -392,6 +409,8 @@
         <li><a href="inputs.html#Electrochemistry.CurrentCollectorInputParams.thermalConductivity">(CurrentCollectorInputParams attribute)</a>
 </li>
         <li><a href="electrolyte.html#Electrochemistry.Separator.thermalConductivity">(Separator attribute)</a>
+</li>
+        <li><a href="inputs.html#Electrochemistry.SeparatorInputParams.thermalConductivity">(SeparatorInputParams attribute)</a>
 </li>
       </ul></li>
   </ul></td>
@@ -416,9 +435,13 @@
 </li>
       <li><a href="genmodels.html#Electrochemistry.ElectronicComponent.updateChargeConservation">updateChargeConservation() (ElectronicComponent method)</a>
 </li>
+      <li><a href="inputs.html#Electrochemistry.ElectrolyteInputParams.updateConductivityFunc">updateConductivityFunc (ElectrolyteInputParams attribute)</a>
+</li>
       <li><a href="genmodels.html#Electrochemistry.ElectronicComponent.updateCurrent">updateCurrent() (ElectronicComponent method)</a>
 </li>
       <li><a href="electrolyte.html#Electrochemistry.Electrolyte.updateCurrentBcSource">updateCurrentBcSource() (Electrolyte method)</a>
+</li>
+      <li><a href="inputs.html#Electrochemistry.ElectrolyteInputParams.updateDiffusionCoefficientFunc">updateDiffusionCoefficientFunc (ElectrolyteInputParams attribute)</a>
 </li>
       <li><a href="batterymodel.html#Battery.Battery.updateElectrodeCoupling">updateElectrodeCoupling() (Battery method)</a>
 </li>
@@ -426,10 +449,10 @@
 </li>
       <li><a href="genmodels.html#Electrochemistry.ElectroChemicalComponent.updateMassConservation">updateMassConservation() (ElectroChemicalComponent method)</a>
 </li>
-      <li><a href="genmodels.html#Electrochemistry.ElectroChemicalComponent.updateMassFlux">updateMassFlux() (ElectroChemicalComponent method)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="genmodels.html#Electrochemistry.ElectroChemicalComponent.updateMassFlux">updateMassFlux() (ElectroChemicalComponent method)</a>
+</li>
       <li><a href="inputs.html#Electrochemistry.InterfaceInputParams.updateOCPFunc">updateOCPFunc (InterfaceInputParams attribute)</a>
 </li>
       <li><a href="batterymodel.html#Battery.Battery.updateTemperature">updateTemperature() (Battery method)</a>

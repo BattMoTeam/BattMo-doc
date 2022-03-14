@@ -197,7 +197,13 @@ collector (<a class="reference internal" href="electrodes.html#Electrochemistry.
 <dl class="mat attribute">
 <dt class="sig sig-object mat" id="Electrochemistry.InterfaceInputParams.cmax">
 <span class="sig-name descname"><span class="pre">cmax</span></span><a class="headerlink" href="#Electrochemistry.InterfaceInputParams.cmax" title="Permalink to this definition"></a></dt>
-<dd><p>[m^2.5 mol^-0.5 s^-1]</p>
+<dd><p>Maximum concentration [mol m^-3]</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="Electrochemistry.InterfaceInputParams.k0">
+<span class="sig-name descname"><span class="pre">k0</span></span><a class="headerlink" href="#Electrochemistry.InterfaceInputParams.k0" title="Permalink to this definition"></a></dt>
+<dd><p>Reference rate constant  [m^2.5 mol^-0.5 s^-1]</p>
 </dd></dl>
 
 <dl class="mat attribute">
@@ -271,7 +277,7 @@ collector (<a class="reference internal" href="electrodes.html#Electrochemistry.
 <dl class="mat attribute">
 <dt class="sig sig-object mat" id="Electrochemistry.SolidDiffusionModelInputParams.N">
 <span class="sig-name descname"><span class="pre">N</span></span><a class="headerlink" href="#Electrochemistry.SolidDiffusionModelInputParams.N" title="Permalink to this definition"></a></dt>
-<dd><p>Discretization step for the diffusion model [-]</p>
+<dd><p>Number of discretization intervals in the diffusion model [-]</p>
 </dd></dl>
 
 <dl class="mat attribute">
@@ -333,7 +339,49 @@ collector (<a class="reference internal" href="electrodes.html#Electrochemistry.
 <dl class="mat attribute">
 <dt class="sig sig-object mat" id="Electrochemistry.ElectrolyteInputParams.name">
 <span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#Electrochemistry.ElectrolyteInputParams.name" title="Permalink to this definition"></a></dt>
-<dd><p>[kg m^-3] (Note : only of the liquid part, the density of the separator is given there)</p>
+<dd><p>Given name (for convinience)</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="Electrochemistry.ElectrolyteInputParams.compnames">
+<span class="sig-name descname"><span class="pre">compnames</span></span><a class="headerlink" href="#Electrochemistry.ElectrolyteInputParams.compnames" title="Permalink to this definition"></a></dt>
+<dd><p>Names of the components in the electrolyte</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="Electrochemistry.ElectrolyteInputParams.sp">
+<span class="sig-name descname"><span class="pre">sp</span></span><a class="headerlink" href="#Electrochemistry.ElectrolyteInputParams.sp" title="Permalink to this definition"></a></dt>
+<dd><p>Structure given properties of each component</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="Electrochemistry.ElectrolyteInputParams.Separator">
+<span class="sig-name descname"><span class="pre">Separator</span></span><a class="headerlink" href="#Electrochemistry.ElectrolyteInputParams.Separator" title="Permalink to this definition"></a></dt>
+<dd><p>Input parameter for the separator (<a class="reference internal" href="#Electrochemistry.SeparatorInputParams" title="Electrochemistry.SeparatorInputParams"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">SeparatorInputParams</span></code></a>)</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="Electrochemistry.ElectrolyteInputParams.heatCapacity">
+<span class="sig-name descname"><span class="pre">heatCapacity</span></span><a class="headerlink" href="#Electrochemistry.ElectrolyteInputParams.heatCapacity" title="Permalink to this definition"></a></dt>
+<dd><p>Intrinsic Heat capacity of the electrolyte</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="Electrochemistry.ElectrolyteInputParams.updateConductivityFunc">
+<span class="sig-name descname"><span class="pre">updateConductivityFunc</span></span><a class="headerlink" href="#Electrochemistry.ElectrolyteInputParams.updateConductivityFunc" title="Permalink to this definition"></a></dt>
+<dd><p>Function handler to compute conductivity</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="Electrochemistry.ElectrolyteInputParams.updateDiffusionCoefficientFunc">
+<span class="sig-name descname"><span class="pre">updateDiffusionCoefficientFunc</span></span><a class="headerlink" href="#Electrochemistry.ElectrolyteInputParams.updateDiffusionCoefficientFunc" title="Permalink to this definition"></a></dt>
+<dd><p>Function handler to compute diffusion coefficient</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="Electrochemistry.ElectrolyteInputParams.density">
+<span class="sig-name descname"><span class="pre">density</span></span><a class="headerlink" href="#Electrochemistry.ElectrolyteInputParams.density" title="Permalink to this definition"></a></dt>
+<dd><p>Density [kg m^-3] (Note : only of the liquid part, the density of the separator is given there)</p>
 </dd></dl>
 
 </dd></dl>
@@ -345,7 +393,25 @@ collector (<a class="reference internal" href="electrodes.html#Electrochemistry.
 <dl class="mat attribute">
 <dt class="sig sig-object mat" id="Electrochemistry.SeparatorInputParams.porosity">
 <span class="sig-name descname"><span class="pre">porosity</span></span><a class="headerlink" href="#Electrochemistry.SeparatorInputParams.porosity" title="Permalink to this definition"></a></dt>
-<dd><p>[kg m^-3]</p>
+<dd><p>Porosity [-]</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="Electrochemistry.SeparatorInputParams.thermalConductivity">
+<span class="sig-name descname"><span class="pre">thermalConductivity</span></span><a class="headerlink" href="#Electrochemistry.SeparatorInputParams.thermalConductivity" title="Permalink to this definition"></a></dt>
+<dd><p>Intrinsic Thermal conductivity of the electrolyte</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="Electrochemistry.SeparatorInputParams.heatCapacity">
+<span class="sig-name descname"><span class="pre">heatCapacity</span></span><a class="headerlink" href="#Electrochemistry.SeparatorInputParams.heatCapacity" title="Permalink to this definition"></a></dt>
+<dd><p>Intrinsic Heat capacity of the electrolyte</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="Electrochemistry.SeparatorInputParams.density">
+<span class="sig-name descname"><span class="pre">density</span></span><a class="headerlink" href="#Electrochemistry.SeparatorInputParams.density" title="Permalink to this definition"></a></dt>
+<dd><p>Density [kg m^-3]</p>
 </dd></dl>
 
 </dd></dl>
@@ -409,7 +475,7 @@ collector (<a class="reference internal" href="electrodes.html#Electrochemistry.
 <dl class="mat attribute">
 <dt class="sig sig-object mat" id="Battery.BatteryInputParams.couplingTerms">
 <span class="sig-name descname"><span class="pre">couplingTerms</span></span><a class="headerlink" href="#Battery.BatteryInputParams.couplingTerms" title="Permalink to this definition"></a></dt>
-<dd><p>Coupling terms (describe the topological structure of the coupling)</p>
+<dd><p>Coupling terms (describe the topological structure of the coupling between the components)</p>
 </dd></dl>
 
 </dd></dl>
