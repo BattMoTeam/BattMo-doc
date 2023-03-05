@@ -37,10 +37,9 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="inputs.html">Input Parameters</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mrst.html">MRST</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bibliography.html">Reference lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advancedtopics.html">Advanced topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inputs.html">BattMo API</a></li>
 </ul>
 
         </div>
@@ -69,15 +68,179 @@
              
   <div class="section" id="module-Electrochemistry">
 <span id="electrode-components"></span><h1>Electrode components<a class="headerlink" href="#module-Electrochemistry" title="Permalink to this headline"></a></h1>
+<dl class="mat class">
+<dt class="sig sig-object mat" id="Electrochemistry.Electrode">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Electrode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">paramobj</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Electrochemistry.Electrode" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">Utilities.BaseModel</span></code></p>
+<p>The Electrode model is made of two sub-models : an electrode active component (see
+<a class="reference internal" href="#Electrochemistry.ActiveMaterial" title="Electrochemistry.ActiveMaterial"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">Electrochemistry.ActiveMaterial</span></code></a>) and a current collector (see
+<a class="reference internal" href="#Electrochemistry.CurrentCollector" title="Electrochemistry.CurrentCollector"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">Electrochemistry.CurrentCollector</span></code></a>)</p>
+<p>paramobj is instance of <code class="xref mat mat-class docutils literal notranslate"><span class="pre">Electrochemistry.Electrodes.ElectrodeInputParams</span></code></p>
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="Electrochemistry.ElectrodeActiveComponent">
-<span class="sig-name descname"><span class="pre">ElectrodeActiveComponent</span></span><a class="headerlink" href="#Electrochemistry.ElectrodeActiveComponent" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object mat" id="Electrochemistry.Electrode.ActiveMaterial">
+<span class="sig-name descname"><span class="pre">ActiveMaterial</span></span><a class="headerlink" href="#Electrochemistry.Electrode.ActiveMaterial" title="Permalink to this definition"></a></dt>
+<dd><p>instance of <a class="reference internal" href="#Electrochemistry.ActiveMaterial" title="Electrochemistry.ActiveMaterial"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">Electrochemistry.ActiveMaterial</span></code></a></p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="Electrochemistry.Electrode.CurrentCollector">
+<span class="sig-name descname"><span class="pre">CurrentCollector</span></span><a class="headerlink" href="#Electrochemistry.Electrode.CurrentCollector" title="Permalink to this definition"></a></dt>
+<dd><p>instance of <a class="reference internal" href="#Electrochemistry.CurrentCollector" title="Electrochemistry.CurrentCollector"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">Electrochemistry.CurrentCollector</span></code></a></p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="Electrochemistry.Electrode.registerVarAndPropfuncNames">
+<span class="sig-name descname"><span class="pre">registerVarAndPropfuncNames</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">model</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Electrochemistry.Electrode.registerVarAndPropfuncNames" title="Permalink to this definition"></a></dt>
+<dd><p>Declaration of the Dynamical Variables and Function of the model
+(setup of varnameList and propertyFunctionList)</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="Electrochemistry.Electrode.setupActiveMaterial">
+<span class="sig-name descname"><span class="pre">setupActiveMaterial</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">model</span></em>, <em class="sig-param"><span class="pre">paramobj</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Electrochemistry.Electrode.setupActiveMaterial" title="Permalink to this definition"></a></dt>
+<dd><p>paramobj is instance of ActiveMaterialInputParams
+standard instantiation (ActiveMaterial is specified in ActiveMaterial instantiation)</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="Electrochemistry.Electrode.setupCurrentCollector">
+<span class="sig-name descname"><span class="pre">setupCurrentCollector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">model</span></em>, <em class="sig-param"><span class="pre">paramobj</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Electrochemistry.Electrode.setupCurrentCollector" title="Permalink to this definition"></a></dt>
+<dd><p>standard instantiation</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="Electrochemistry.Electrode.updateCoupling">
+<span class="sig-name descname"><span class="pre">updateCoupling</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">model</span></em>, <em class="sig-param"><span class="pre">state</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Electrochemistry.Electrode.updateCoupling" title="Permalink to this definition"></a></dt>
+<dd><p>setup coupling terms between the current collector and the electrode active component</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="mat class">
+<dt class="sig sig-object mat" id="Electrochemistry.ActiveMaterial">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">ActiveMaterial</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">paramobj</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Electrochemistry.ActiveMaterial" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">Electrochemistry.ElectronicComponent</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">paramobj</span></code> is instance of <a class="reference internal" href="inputs.html#Electrochemistry.ActiveMaterialInputParams" title="Electrochemistry.ActiveMaterialInputParams"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">ActiveMaterialInputParams</span></code></a></p>
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="Electrochemistry.ActiveMaterial.Interface">
+<span class="sig-name descname"><span class="pre">Interface</span></span><a class="headerlink" href="#Electrochemistry.ActiveMaterial.Interface" title="Permalink to this definition"></a></dt>
+<dd><p>porosity</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="Electrochemistry.ActiveMaterial.volumeFraction">
+<span class="sig-name descname"><span class="pre">volumeFraction</span></span><a class="headerlink" href="#Electrochemistry.ActiveMaterial.volumeFraction" title="Permalink to this definition"></a></dt>
+<dd><p>Volume fraction of the whole material (binder and so on included)</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="Electrochemistry.ActiveMaterial.activeMaterialFraction">
+<span class="sig-name descname"><span class="pre">activeMaterialFraction</span></span><a class="headerlink" href="#Electrochemistry.ActiveMaterial.activeMaterialFraction" title="Permalink to this definition"></a></dt>
+<dd><p>Volume fraction occupied only by the active material</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="Electrochemistry.ActiveMaterial.electricalConductivity">
+<span class="sig-name descname"><span class="pre">electricalConductivity</span></span><a class="headerlink" href="#Electrochemistry.ActiveMaterial.electricalConductivity" title="Permalink to this definition"></a></dt>
+<dd><p>Electrical conductivity</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="Electrochemistry.ActiveMaterial.InterDiffusionCoefficient">
+<span class="sig-name descname"><span class="pre">InterDiffusionCoefficient</span></span><a class="headerlink" href="#Electrochemistry.ActiveMaterial.InterDiffusionCoefficient" title="Permalink to this definition"></a></dt>
+<dd><p>Inter particle diffusion coefficient parameter (diffusion between the particles)</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="Electrochemistry.ActiveMaterial.thermalConductivity">
+<span class="sig-name descname"><span class="pre">thermalConductivity</span></span><a class="headerlink" href="#Electrochemistry.ActiveMaterial.thermalConductivity" title="Permalink to this definition"></a></dt>
+<dd><p>Intrinsic Thermal conductivity of the active component</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="Electrochemistry.ActiveMaterial.specificHeatCapacity">
+<span class="sig-name descname"><span class="pre">specificHeatCapacity</span></span><a class="headerlink" href="#Electrochemistry.ActiveMaterial.specificHeatCapacity" title="Permalink to this definition"></a></dt>
+<dd><p>Specific Heat capacity of the active component</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="Electrochemistry.ActiveMaterial.EffectiveDiffusionCoefficient">
+<span class="sig-name descname"><span class="pre">EffectiveDiffusionCoefficient</span></span><a class="headerlink" href="#Electrochemistry.ActiveMaterial.EffectiveDiffusionCoefficient" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="Electrochemistry.ActiveMaterial.EffectiveThermalConductivity">
+<span class="sig-name descname"><span class="pre">EffectiveThermalConductivity</span></span><a class="headerlink" href="#Electrochemistry.ActiveMaterial.EffectiveThermalConductivity" title="Permalink to this definition"></a></dt>
+<dd><p>Effective Thermal Conductivity of the active component</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="Electrochemistry.ActiveMaterial.EffectiveVolumetricHeatCapacity">
+<span class="sig-name descname"><span class="pre">EffectiveVolumetricHeatCapacity</span></span><a class="headerlink" href="#Electrochemistry.ActiveMaterial.EffectiveVolumetricHeatCapacity" title="Permalink to this definition"></a></dt>
+<dd><p>Effective Heat Capacity of the active component</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="Electrochemistry.ActiveMaterial.diffusionModelType">
+<span class="sig-name descname"><span class="pre">diffusionModelType</span></span><a class="headerlink" href="#Electrochemistry.ActiveMaterial.diffusionModelType" title="Permalink to this definition"></a></dt>
+<dd><p>only used in no current collector</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="Electrochemistry.ActiveMaterial.registerVarAndPropfuncNames">
+<span class="sig-name descname"><span class="pre">registerVarAndPropfuncNames</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">model</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Electrochemistry.ActiveMaterial.registerVarAndPropfuncNames" title="Permalink to this definition"></a></dt>
+<dd><p>Declaration of the Dynamical Variables and Function of the model
+(setup of varnameList and propertyFunctionList)</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="Electrochemistry.ActiveMaterial.updateAfterConvergence">
+<span class="sig-name descname"><span class="pre">updateAfterConvergence</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">model</span></em>, <em class="sig-param"><span class="pre">state0</span></em>, <em class="sig-param"><span class="pre">state</span></em>, <em class="sig-param"><span class="pre">dt</span></em>, <em class="sig-param"><span class="pre">drivingForces</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Electrochemistry.ActiveMaterial.updateAfterConvergence" title="Permalink to this definition"></a></dt>
+<dd><p>[state, report] = updateAfterConvergence&#64;ElectronicComponent(model, state0, state, dt, drivingForces);</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="Electrochemistry.ActiveMaterial.updateMassFlux">
+<span class="sig-name descname"><span class="pre">updateMassFlux</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">model</span></em>, <em class="sig-param"><span class="pre">state</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Electrochemistry.ActiveMaterial.updateMassFlux" title="Permalink to this definition"></a></dt>
+<dd><p>Used when diffusionModelType == ‘simple’</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="Electrochemistry.ActiveMaterial.assembleAccumTerm">
+<span class="sig-name descname"><span class="pre">assembleAccumTerm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">model</span></em>, <em class="sig-param"><span class="pre">state</span></em>, <em class="sig-param"><span class="pre">state0</span></em>, <em class="sig-param"><span class="pre">dt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Electrochemistry.ActiveMaterial.assembleAccumTerm" title="Permalink to this definition"></a></dt>
+<dd><p>Used when diffusionModelType == ‘simple’</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="Electrochemistry.ActiveMaterial.updateMassSource">
+<span class="sig-name descname"><span class="pre">updateMassSource</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">model</span></em>, <em class="sig-param"><span class="pre">state</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Electrochemistry.ActiveMaterial.updateMassSource" title="Permalink to this definition"></a></dt>
+<dd><p>used when diffusionModelType == simple</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="Electrochemistry.ActiveMaterial.updateMassConservation">
+<span class="sig-name descname"><span class="pre">updateMassConservation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">model</span></em>, <em class="sig-param"><span class="pre">state</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Electrochemistry.ActiveMaterial.updateMassConservation" title="Permalink to this definition"></a></dt>
+<dd><p>Used when diffusionModelType == ‘simple’ or no particle diffusion</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="Electrochemistry.ActiveMaterial.updateAverageConcentration">
+<span class="sig-name descname"><span class="pre">updateAverageConcentration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">model</span></em>, <em class="sig-param"><span class="pre">state</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Electrochemistry.ActiveMaterial.updateAverageConcentration" title="Permalink to this definition"></a></dt>
+<dd><p>shortcut</p>
+</dd></dl>
+
+<dl class="mat method">
+<dt class="sig sig-object mat" id="Electrochemistry.ActiveMaterial.updateSOC">
+<span class="sig-name descname"><span class="pre">updateSOC</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">model</span></em>, <em class="sig-param"><span class="pre">state</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Electrochemistry.ActiveMaterial.updateSOC" title="Permalink to this definition"></a></dt>
+<dd><p>shortcut</p>
+</dd></dl>
+
+</dd></dl>
 
 <dl class="mat class">
 <dt class="sig sig-object mat" id="Electrochemistry.CurrentCollector">
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">CurrentCollector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">paramobj</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Electrochemistry.CurrentCollector" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="genmodels.html#Electrochemistry.ElectronicComponent" title="Electrochemistry.ElectronicComponent"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">Electrochemistry.ElectronicComponent</span></code></a></p>
+<dd><p>Bases: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">Electrochemistry.ElectronicComponent</span></code></p>
 </dd></dl>
 
 </div>

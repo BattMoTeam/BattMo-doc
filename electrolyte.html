@@ -37,10 +37,9 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="inputs.html">Input Parameters</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mrst.html">MRST</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bibliography.html">Reference lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advancedtopics.html">Advanced topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inputs.html">BattMo API</a></li>
 </ul>
 
         </div>
@@ -72,24 +71,36 @@
 <dl class="mat class">
 <dt class="sig sig-object mat" id="Electrochemistry.Electrolyte">
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Electrolyte</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">paramobj</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Electrochemistry.Electrolyte" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="genmodels.html#Electrochemistry.ElectroChemicalComponent" title="Electrochemistry.ElectroChemicalComponent"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">Electrochemistry.ElectroChemicalComponent</span></code></a></p>
+<dd><p>Bases: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">Electrochemistry.ElectroChemicalComponent</span></code></p>
 <p>paramobj is instance of ElectrolyteInputParams or a derived class</p>
 <dl class="mat attribute">
 <dt class="sig sig-object mat" id="Electrochemistry.Electrolyte.Separator">
 <span class="sig-name descname"><span class="pre">Separator</span></span><a class="headerlink" href="#Electrochemistry.Electrolyte.Separator" title="Permalink to this definition"></a></dt>
+<dd><p>Structure with following fields</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="Electrochemistry.Electrolyte.volumeFraction">
+<span class="sig-name descname"><span class="pre">volumeFraction</span></span><a class="headerlink" href="#Electrochemistry.Electrolyte.volumeFraction" title="Permalink to this definition"></a></dt>
 <dd><p>intrinsic thermal conductivity value</p>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="Electrochemistry.Electrolyte.heatCapacity">
-<span class="sig-name descname"><span class="pre">heatCapacity</span></span><a class="headerlink" href="#Electrochemistry.Electrolyte.heatCapacity" title="Permalink to this definition"></a></dt>
-<dd><p>intrinsic heat capacity value</p>
+<dt class="sig sig-object mat" id="Electrochemistry.Electrolyte.specificHeatCapacity">
+<span class="sig-name descname"><span class="pre">specificHeatCapacity</span></span><a class="headerlink" href="#Electrochemistry.Electrolyte.specificHeatCapacity" title="Permalink to this definition"></a></dt>
+<dd><p>specific heat capacity value</p>
 </dd></dl>
 
 <dl class="mat attribute">
 <dt class="sig sig-object mat" id="Electrochemistry.Electrolyte.density">
 <span class="sig-name descname"><span class="pre">density</span></span><a class="headerlink" href="#Electrochemistry.Electrolyte.density" title="Permalink to this definition"></a></dt>
 <dd><p>[kg m^-3] (Note : only of the liquid part, the density of the separator is given there)</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="Electrochemistry.Electrolyte.EffectiveThermalConductivity">
+<span class="sig-name descname"><span class="pre">EffectiveThermalConductivity</span></span><a class="headerlink" href="#Electrochemistry.Electrolyte.EffectiveThermalConductivity" title="Permalink to this definition"></a></dt>
+<dd><p>helper properties</p>
 </dd></dl>
 
 <dl class="mat method">
@@ -110,17 +121,11 @@
 <dl class="mat class">
 <dt class="sig sig-object mat" id="Electrochemistry.Separator">
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Separator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">paramobj</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Electrochemistry.Separator" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="genmodels.html#Utilities.BaseModel" title="Utilities.BaseModel"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">Utilities.BaseModel</span></code></a></p>
+<dd><p>Bases: <code class="xref mat mat-class docutils literal notranslate"><span class="pre">Utilities.BaseModel</span></code></p>
 <dl class="mat attribute">
 <dt class="sig sig-object mat" id="Electrochemistry.Separator.porosity">
 <span class="sig-name descname"><span class="pre">porosity</span></span><a class="headerlink" href="#Electrochemistry.Separator.porosity" title="Permalink to this definition"></a></dt>
 <dd><p>Porosity [-]</p>
-</dd></dl>
-
-<dl class="mat attribute">
-<dt class="sig sig-object mat" id="Electrochemistry.Separator.volumeFraction">
-<span class="sig-name descname"><span class="pre">volumeFraction</span></span><a class="headerlink" href="#Electrochemistry.Separator.volumeFraction" title="Permalink to this definition"></a></dt>
-<dd><p>Volume fraction [-]</p>
 </dd></dl>
 
 <dl class="mat attribute">
@@ -130,15 +135,21 @@
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="Electrochemistry.Separator.heatCapacity">
-<span class="sig-name descname"><span class="pre">heatCapacity</span></span><a class="headerlink" href="#Electrochemistry.Separator.heatCapacity" title="Permalink to this definition"></a></dt>
-<dd><p>intrinsic heat capacity value</p>
+<dt class="sig sig-object mat" id="Electrochemistry.Separator.specificHeatCapacity">
+<span class="sig-name descname"><span class="pre">specificHeatCapacity</span></span><a class="headerlink" href="#Electrochemistry.Separator.specificHeatCapacity" title="Permalink to this definition"></a></dt>
+<dd><p>specific heat capacity</p>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="Electrochemistry.Separator.EffectiveThermalConductivity">
-<span class="sig-name descname"><span class="pre">EffectiveThermalConductivity</span></span><a class="headerlink" href="#Electrochemistry.Separator.EffectiveThermalConductivity" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object mat" id="Electrochemistry.Separator.density">
+<span class="sig-name descname"><span class="pre">density</span></span><a class="headerlink" href="#Electrochemistry.Separator.density" title="Permalink to this definition"></a></dt>
 <dd><p>Density [kg m^-3]</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="Electrochemistry.Separator.volumeFraction">
+<span class="sig-name descname"><span class="pre">volumeFraction</span></span><a class="headerlink" href="#Electrochemistry.Separator.volumeFraction" title="Permalink to this definition"></a></dt>
+<dd><p>Volume fraction [-]</p>
 </dd></dl>
 
 </dd></dl>

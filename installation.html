@@ -39,10 +39,9 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="inputs.html">Input Parameters</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mrst.html">MRST</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bibliography.html">Reference lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advancedtopics.html">Advanced topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inputs.html">BattMo API</a></li>
 </ul>
 
         </div>
@@ -74,15 +73,15 @@
 <p>BattMo is based on <a class="reference external" href="https://www.sintef.no/Projectweb/MRST/">MRST</a> which provides a general unstructured grid format, generic MATLAB automatic differentiation
 tools and Newton solvers.</p>
 <p>The MRST code source can be installed directlu using git submodules:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git clone --recurse-submodules  git@github.com:battmoTeam/battmo.git
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git clone --recurse-submodules https://github.com/BattMoTeam/BattMo.git
 </pre></div>
 </div>
 <p>Then start Matlab and in the directory <code class="code docutils literal notranslate"><span class="pre">battmo</span></code> where you cloned the repo, run:</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">startupBattMo</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">startupBattMo</span><span class="w"></span>
 </pre></div>
 </div>
 <p>You can check that that your installation is setup correctly by running one of the example scripts</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">runBattery1D</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">runBattery1D</span><span class="w"></span>
 </pre></div>
 </div>
 <p>For large models, iterative solvers are necessary. The <strong>open source</strong> version from 2012 of the <a class="reference external" href="http://agmg.eu/">AGMG</a> iterative solver from <strong>2012</strong> is provided as a <a class="reference external" href="https://github.com/batmoTeam/agmg">submodule</a>. We

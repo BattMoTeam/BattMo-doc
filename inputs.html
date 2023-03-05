@@ -17,8 +17,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="MRST" href="mrst.html" />
-    <link rel="prev" title="Battery 3D model" href="publishedExamples/runBattery3D.html" /> 
+    <link rel="prev" title="Parameter sets" href="parsets.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -39,8 +38,9 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Input Parameters</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advancedtopics.html">Advanced topics</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">BattMo API</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#input-parameters-for-the-electrode-components">Input parameters for the electrode components</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#input-parameter-for-electrode">Input parameter for Electrode</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#input-parameter-for-active-material">Input parameter for Active Material</a></li>
@@ -53,8 +53,6 @@
 <li class="toctree-l2"><a class="reference internal" href="#input-parameters-for-the-battery">Input parameters for the Battery</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="mrst.html">MRST</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bibliography.html">Reference lists</a></li>
 </ul>
 
         </div>
@@ -88,7 +86,7 @@ recursively to the models. The input class is named accordingly to the model it 
 in the same folder.</p>
 <div class="section" id="input-parameters-for-the-electrode-components">
 <h2>Input parameters for the electrode components<a class="headerlink" href="#input-parameters-for-the-electrode-components" title="Permalink to this headline"></a></h2>
-<p>An electrode (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">Electrode</span></code>) consists of an active material (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">ActiveMaterial</span></code>), which contains an interface model (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">Interface</span></code>)
+<p>An electrode (<a class="reference internal" href="electrodes.html#Electrochemistry.Electrode" title="Electrochemistry.Electrode"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">Electrode</span></code></a>) consists of an active material (<a class="reference internal" href="electrodes.html#Electrochemistry.ActiveMaterial" title="Electrochemistry.ActiveMaterial"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">ActiveMaterial</span></code></a>), which contains an interface model (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">Interface</span></code>)
 and a solid diffusion model (<code class="xref mat mat-class docutils literal notranslate"><span class="pre">SolidDiffusionModel</span></code>), and a current
 collector (<a class="reference internal" href="electrodes.html#Electrochemistry.CurrentCollector" title="Electrochemistry.CurrentCollector"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">CurrentCollector</span></code></a>)</p>
 <a class="reference internal image-reference" href="_images/electrodegraph.png"><img alt="_images/electrodegraph.png" src="_images/electrodegraph.png" style="width: 80%;" /></a>
@@ -116,6 +114,12 @@ collector (<a class="reference internal" href="electrodes.html#Electrochemistry.
 <dd><p>Coupling term specification</p>
 </dd></dl>
 
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="Electrochemistry.ElectrodeInputParams.include_current_collectors">
+<span class="sig-name descname"><span class="pre">include_current_collectors</span></span><a class="headerlink" href="#Electrochemistry.ElectrodeInputParams.include_current_collectors" title="Permalink to this definition"></a></dt>
+<dd><p>Set to true to include current collector</p>
+</dd></dl>
+
 </dd></dl>
 
 </div>
@@ -124,7 +128,7 @@ collector (<a class="reference internal" href="electrodes.html#Electrochemistry.
 <dl class="mat class">
 <dt class="sig sig-object mat" id="Electrochemistry.ActiveMaterialInputParams">
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">ActiveMaterialInputParams</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">jsonstruct</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Electrochemistry.ActiveMaterialInputParams" title="Permalink to this definition"></a></dt>
-<dd><p>Input parameter class for <code class="xref mat mat-class docutils literal notranslate"><span class="pre">ActiveMaterial</span></code></p>
+<dd><p>Input parameter class for <a class="reference internal" href="electrodes.html#Electrochemistry.ActiveMaterial" title="Electrochemistry.ActiveMaterial"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">ActiveMaterial</span></code></a></p>
 <dl class="mat attribute">
 <dt class="sig sig-object mat" id="Electrochemistry.ActiveMaterialInputParams.Interface">
 <span class="sig-name descname"><span class="pre">Interface</span></span><a class="headerlink" href="#Electrochemistry.ActiveMaterialInputParams.Interface" title="Permalink to this definition"></a></dt>
@@ -138,9 +142,9 @@ collector (<a class="reference internal" href="electrodes.html#Electrochemistry.
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="Electrochemistry.ActiveMaterialInputParams.InterDiffusionCoefficient">
-<span class="sig-name descname"><span class="pre">InterDiffusionCoefficient</span></span><a class="headerlink" href="#Electrochemistry.ActiveMaterialInputParams.InterDiffusionCoefficient" title="Permalink to this definition"></a></dt>
-<dd><p>Interdiffusion coefficient parameter (diffusion between the particles)</p>
+<dt class="sig sig-object mat" id="Electrochemistry.ActiveMaterialInputParams.density">
+<span class="sig-name descname"><span class="pre">density</span></span><a class="headerlink" href="#Electrochemistry.ActiveMaterialInputParams.density" title="Permalink to this definition"></a></dt>
+<dd><p>Density</p>
 </dd></dl>
 
 <dl class="mat attribute">
@@ -150,15 +154,39 @@ collector (<a class="reference internal" href="electrodes.html#Electrochemistry.
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="Electrochemistry.ActiveMaterialInputParams.heatCapacity">
-<span class="sig-name descname"><span class="pre">heatCapacity</span></span><a class="headerlink" href="#Electrochemistry.ActiveMaterialInputParams.heatCapacity" title="Permalink to this definition"></a></dt>
-<dd><p>Intrinsic Heat capacity of the active component</p>
+<dt class="sig sig-object mat" id="Electrochemistry.ActiveMaterialInputParams.specificHeatCapacity">
+<span class="sig-name descname"><span class="pre">specificHeatCapacity</span></span><a class="headerlink" href="#Electrochemistry.ActiveMaterialInputParams.specificHeatCapacity" title="Permalink to this definition"></a></dt>
+<dd><p>Specific Heat capacity of the active component</p>
 </dd></dl>
 
 <dl class="mat attribute">
 <dt class="sig sig-object mat" id="Electrochemistry.ActiveMaterialInputParams.electricalConductivity">
 <span class="sig-name descname"><span class="pre">electricalConductivity</span></span><a class="headerlink" href="#Electrochemistry.ActiveMaterialInputParams.electricalConductivity" title="Permalink to this definition"></a></dt>
 <dd><p>Electrical conductivity / [S m^-1]</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="Electrochemistry.ActiveMaterialInputParams.externalCouplingTerm">
+<span class="sig-name descname"><span class="pre">externalCouplingTerm</span></span><a class="headerlink" href="#Electrochemistry.ActiveMaterialInputParams.externalCouplingTerm" title="Permalink to this definition"></a></dt>
+<dd><p>structure to describe external coupling (used in absence of current collector)</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="Electrochemistry.ActiveMaterialInputParams.diffusionModelType">
+<span class="sig-name descname"><span class="pre">diffusionModelType</span></span><a class="headerlink" href="#Electrochemistry.ActiveMaterialInputParams.diffusionModelType" title="Permalink to this definition"></a></dt>
+<dd><p>Choose between type of diffusion model (‘full’ or ‘simple’. The default is set to ‘full’)</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="Electrochemistry.ActiveMaterialInputParams.BruggemanCoefficient">
+<span class="sig-name descname"><span class="pre">BruggemanCoefficient</span></span><a class="headerlink" href="#Electrochemistry.ActiveMaterialInputParams.BruggemanCoefficient" title="Permalink to this definition"></a></dt>
+<dd><p>Volume fraction of the whole material (binder and so on included)</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="Electrochemistry.ActiveMaterialInputParams.activeMaterialFraction">
+<span class="sig-name descname"><span class="pre">activeMaterialFraction</span></span><a class="headerlink" href="#Electrochemistry.ActiveMaterialInputParams.activeMaterialFraction" title="Permalink to this definition"></a></dt>
+<dd><p>Volume fraction occupied only by the active material (default value is 1)</p>
 </dd></dl>
 
 </dd></dl>
@@ -174,12 +202,6 @@ collector (<a class="reference internal" href="electrodes.html#Electrochemistry.
 <dt class="sig sig-object mat" id="Electrochemistry.InterfaceInputParams.G">
 <span class="sig-name descname"><span class="pre">G</span></span><a class="headerlink" href="#Electrochemistry.InterfaceInputParams.G" title="Permalink to this definition"></a></dt>
 <dd><p>Grid</p>
-</dd></dl>
-
-<dl class="mat attribute">
-<dt class="sig sig-object mat" id="Electrochemistry.InterfaceInputParams.name">
-<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#Electrochemistry.InterfaceInputParams.name" title="Permalink to this definition"></a></dt>
-<dd><p>Given name of the interface (for convenience)</p>
 </dd></dl>
 
 <dl class="mat attribute">
@@ -237,9 +259,21 @@ collector (<a class="reference internal" href="electrodes.html#Electrochemistry.
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="Electrochemistry.InterfaceInputParams.updateOCPFunc">
-<span class="sig-name descname"><span class="pre">updateOCPFunc</span></span><a class="headerlink" href="#Electrochemistry.InterfaceInputParams.updateOCPFunc" title="Permalink to this definition"></a></dt>
-<dd><p>Function to update OCP value (matlab function handler)</p>
+<dt class="sig sig-object mat" id="Electrochemistry.InterfaceInputParams.OCP">
+<span class="sig-name descname"><span class="pre">OCP</span></span><a class="headerlink" href="#Electrochemistry.InterfaceInputParams.OCP" title="Permalink to this definition"></a></dt>
+<dd><p>Function to update OCP value given as a struct with fields</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="Electrochemistry.InterfaceInputParams.j0">
+<span class="sig-name descname"><span class="pre">j0</span></span><a class="headerlink" href="#Electrochemistry.InterfaceInputParams.j0" title="Permalink to this definition"></a></dt>
+<dd><p>Function to update j0 : if empty, the default expression using k0 is used, see method Interface.updateReactionRateCoefficient</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="Electrochemistry.InterfaceInputParams.alpha">
+<span class="sig-name descname"><span class="pre">alpha</span></span><a class="headerlink" href="#Electrochemistry.InterfaceInputParams.alpha" title="Permalink to this definition"></a></dt>
+<dd><p>coefficient in Butler-Volmer coefficient (default is 0.5)</p>
 </dd></dl>
 
 </dd></dl>
@@ -274,24 +308,6 @@ collector (<a class="reference internal" href="electrodes.html#Electrochemistry.
 <dd><p>Volumetric surface area [m2 m^-3]</p>
 </dd></dl>
 
-<dl class="mat attribute">
-<dt class="sig sig-object mat" id="Electrochemistry.SolidDiffusionModelInputParams.N">
-<span class="sig-name descname"><span class="pre">N</span></span><a class="headerlink" href="#Electrochemistry.SolidDiffusionModelInputParams.N" title="Permalink to this definition"></a></dt>
-<dd><p>Number of discretization intervals in the diffusion model [-]</p>
-</dd></dl>
-
-<dl class="mat attribute">
-<dt class="sig sig-object mat" id="Electrochemistry.SolidDiffusionModelInputParams.np">
-<span class="sig-name descname"><span class="pre">np</span></span><a class="headerlink" href="#Electrochemistry.SolidDiffusionModelInputParams.np" title="Permalink to this definition"></a></dt>
-<dd><p>Number of computational grid cells (typically set by parent model <code class="xref mat mat-class docutils literal notranslate"><span class="pre">ActiveMaterial</span></code>)</p>
-</dd></dl>
-
-<dl class="mat attribute">
-<dt class="sig sig-object mat" id="Electrochemistry.SolidDiffusionModelInputParams.useSimplifiedDiffusionModel">
-<span class="sig-name descname"><span class="pre">useSimplifiedDiffusionModel</span></span><a class="headerlink" href="#Electrochemistry.SolidDiffusionModelInputParams.useSimplifiedDiffusionModel" title="Permalink to this definition"></a></dt>
-<dd><p>Flag : true if we use simplified diffusion model</p>
-</dd></dl>
-
 </dd></dl>
 
 </div>
@@ -302,9 +318,9 @@ collector (<a class="reference internal" href="electrodes.html#Electrochemistry.
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">CurrentCollectorInputParams</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">jsonstruct</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Electrochemistry.CurrentCollectorInputParams" title="Permalink to this definition"></a></dt>
 <dd><p>Input parameter class for <a class="reference internal" href="electrodes.html#Electrochemistry.CurrentCollector" title="Electrochemistry.CurrentCollector"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">CurrentCollector</span></code></a></p>
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="Electrochemistry.CurrentCollectorInputParams.couplingTerm">
-<span class="sig-name descname"><span class="pre">couplingTerm</span></span><a class="headerlink" href="#Electrochemistry.CurrentCollectorInputParams.couplingTerm" title="Permalink to this definition"></a></dt>
-<dd><p>coupling term specification of the current collector (with external stimulation)</p>
+<dt class="sig sig-object mat" id="Electrochemistry.CurrentCollectorInputParams.externalCouplingTerm">
+<span class="sig-name descname"><span class="pre">externalCouplingTerm</span></span><a class="headerlink" href="#Electrochemistry.CurrentCollectorInputParams.externalCouplingTerm" title="Permalink to this definition"></a></dt>
+<dd><p>coupling term specification of the current collector with external source</p>
 </dd></dl>
 
 <dl class="mat attribute">
@@ -314,8 +330,8 @@ collector (<a class="reference internal" href="electrodes.html#Electrochemistry.
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="Electrochemistry.CurrentCollectorInputParams.heatCapacity">
-<span class="sig-name descname"><span class="pre">heatCapacity</span></span><a class="headerlink" href="#Electrochemistry.CurrentCollectorInputParams.heatCapacity" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object mat" id="Electrochemistry.CurrentCollectorInputParams.specificHeatCapacity">
+<span class="sig-name descname"><span class="pre">specificHeatCapacity</span></span><a class="headerlink" href="#Electrochemistry.CurrentCollectorInputParams.specificHeatCapacity" title="Permalink to this definition"></a></dt>
 <dd><p>Heat capacity of current collector</p>
 </dd></dl>
 
@@ -337,12 +353,6 @@ collector (<a class="reference internal" href="electrodes.html#Electrochemistry.
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">ElectrolyteInputParams</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">jsonstruct</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Electrochemistry.ElectrolyteInputParams" title="Permalink to this definition"></a></dt>
 <dd><p>Input parameter class for <a class="reference internal" href="electrolyte.html#Electrochemistry.Electrolyte" title="Electrochemistry.Electrolyte"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">Electrolyte</span></code></a></p>
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="Electrochemistry.ElectrolyteInputParams.name">
-<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#Electrochemistry.ElectrolyteInputParams.name" title="Permalink to this definition"></a></dt>
-<dd><p>Given name (for convinience)</p>
-</dd></dl>
-
-<dl class="mat attribute">
 <dt class="sig sig-object mat" id="Electrochemistry.ElectrolyteInputParams.compnames">
 <span class="sig-name descname"><span class="pre">compnames</span></span><a class="headerlink" href="#Electrochemistry.ElectrolyteInputParams.compnames" title="Permalink to this definition"></a></dt>
 <dd><p>Names of the components in the electrolyte</p>
@@ -361,26 +371,14 @@ collector (<a class="reference internal" href="electrodes.html#Electrochemistry.
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="Electrochemistry.ElectrolyteInputParams.heatCapacity">
-<span class="sig-name descname"><span class="pre">heatCapacity</span></span><a class="headerlink" href="#Electrochemistry.ElectrolyteInputParams.heatCapacity" title="Permalink to this definition"></a></dt>
-<dd><p>Intrinsic Heat capacity of the electrolyte</p>
+<dt class="sig sig-object mat" id="Electrochemistry.ElectrolyteInputParams.specificHeatCapacity">
+<span class="sig-name descname"><span class="pre">specificHeatCapacity</span></span><a class="headerlink" href="#Electrochemistry.ElectrolyteInputParams.specificHeatCapacity" title="Permalink to this definition"></a></dt>
+<dd><p>Specific Heat capacity of the electrolyte</p>
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="Electrochemistry.ElectrolyteInputParams.updateConductivityFunc">
-<span class="sig-name descname"><span class="pre">updateConductivityFunc</span></span><a class="headerlink" href="#Electrochemistry.ElectrolyteInputParams.updateConductivityFunc" title="Permalink to this definition"></a></dt>
-<dd><p>Function handler to compute conductivity</p>
-</dd></dl>
-
-<dl class="mat attribute">
-<dt class="sig sig-object mat" id="Electrochemistry.ElectrolyteInputParams.updateDiffusionCoefficientFunc">
-<span class="sig-name descname"><span class="pre">updateDiffusionCoefficientFunc</span></span><a class="headerlink" href="#Electrochemistry.ElectrolyteInputParams.updateDiffusionCoefficientFunc" title="Permalink to this definition"></a></dt>
-<dd><p>Function handler to compute diffusion coefficient</p>
-</dd></dl>
-
-<dl class="mat attribute">
-<dt class="sig sig-object mat" id="Electrochemistry.ElectrolyteInputParams.density">
-<span class="sig-name descname"><span class="pre">density</span></span><a class="headerlink" href="#Electrochemistry.ElectrolyteInputParams.density" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object mat" id="Electrochemistry.ElectrolyteInputParams.Conductivity">
+<span class="sig-name descname"><span class="pre">Conductivity</span></span><a class="headerlink" href="#Electrochemistry.ElectrolyteInputParams.Conductivity" title="Permalink to this definition"></a></dt>
 <dd><p>Density [kg m^-3] (Note : only of the liquid part, the density of the separator is given there)</p>
 </dd></dl>
 
@@ -403,9 +401,9 @@ collector (<a class="reference internal" href="electrodes.html#Electrochemistry.
 </dd></dl>
 
 <dl class="mat attribute">
-<dt class="sig sig-object mat" id="Electrochemistry.SeparatorInputParams.heatCapacity">
-<span class="sig-name descname"><span class="pre">heatCapacity</span></span><a class="headerlink" href="#Electrochemistry.SeparatorInputParams.heatCapacity" title="Permalink to this definition"></a></dt>
-<dd><p>Intrinsic Heat capacity of the electrolyte</p>
+<dt class="sig sig-object mat" id="Electrochemistry.SeparatorInputParams.specificHeatCapacity">
+<span class="sig-name descname"><span class="pre">specificHeatCapacity</span></span><a class="headerlink" href="#Electrochemistry.SeparatorInputParams.specificHeatCapacity" title="Permalink to this definition"></a></dt>
+<dd><p>Specific Heat capacity of the electrolyte</p>
 </dd></dl>
 
 <dl class="mat attribute">
@@ -445,7 +443,7 @@ collector (<a class="reference internal" href="electrodes.html#Electrochemistry.
 <dl class="mat attribute">
 <dt class="sig sig-object mat" id="Battery.BatteryInputParams.NegativeElectrode">
 <span class="sig-name descname"><span class="pre">NegativeElectrode</span></span><a class="headerlink" href="#Battery.BatteryInputParams.NegativeElectrode" title="Permalink to this definition"></a></dt>
-<dd><p>parameters for the battery components</p>
+<dd><p>instance of <a class="reference internal" href="#Electrochemistry.ElectrodeInputParams" title="Electrochemistry.ElectrodeInputParams"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">ElectrodeInputParams</span></code></a></p>
 </dd></dl>
 
 <dl class="mat attribute">
@@ -478,6 +476,18 @@ collector (<a class="reference internal" href="electrodes.html#Electrochemistry.
 <dd><p>Coupling terms (describe the topological structure of the coupling between the components)</p>
 </dd></dl>
 
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="Battery.BatteryInputParams.use_thermal">
+<span class="sig-name descname"><span class="pre">use_thermal</span></span><a class="headerlink" href="#Battery.BatteryInputParams.use_thermal" title="Permalink to this definition"></a></dt>
+<dd><p>flag : true if  coupled thermal simulation should be considered</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="Battery.BatteryInputParams.use_particle_diffusion">
+<span class="sig-name descname"><span class="pre">use_particle_diffusion</span></span><a class="headerlink" href="#Battery.BatteryInputParams.use_particle_diffusion" title="Permalink to this definition"></a></dt>
+<dd><p>flag : true if solid diffusion should be included (mainly for debugging)</p>
+</dd></dl>
+
 </dd></dl>
 
 </div>
@@ -487,8 +497,7 @@ collector (<a class="reference internal" href="electrodes.html#Electrochemistry.
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="publishedExamples/runBattery3D.html" class="btn btn-neutral float-left" title="Battery 3D model" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="mrst.html" class="btn btn-neutral float-right" title="MRST" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="parsets.html" class="btn btn-neutral float-left" title="Parameter sets" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>
