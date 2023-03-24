@@ -38,8 +38,9 @@
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials.html">Getting started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../advancedtopics.html">Advanced topics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../inputs.html">BattMo API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../inputs.html">BattMo Li-ion battery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../geometryinput.html">Geometries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bibliography.html">References</a></li>
 </ul>
 
         </div>
@@ -85,7 +86,7 @@
 </div>
 <div class="section" id="setup-the-properties-of-li-ion-battery-materials-and-cell-design">
 <h2>Setup the properties of Li-ion battery materials and cell design<a class="headerlink" href="#setup-the-properties-of-li-ion-battery-materials-and-cell-design" title="Permalink to this headline"></a></h2>
-<p>The properties and parameters of the battery cell, including the architecture and materials, are set using an instance of <a class="reference internal" href="../inputs.html#Battery.BatteryInputParams" title="Battery.BatteryInputParams"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">BatteryInputParams</span></code></a>. This class is used to initialize the simulation and it propagates all the parameters throughout the submodels. The input parameters can be set manually or provided in json format. All the parameters for the model are stored in the paramobj object.</p>
+<p>The properties and parameters of the battery cell, including the architecture and materials, are set using an instance of <a class="reference internal" href="../batteryinput.html#Battery.BatteryInputParams" title="Battery.BatteryInputParams"><code class="xref mat mat-class docutils literal notranslate"><span class="pre">BatteryInputParams</span></code></a>. This class is used to initialize the simulation and it propagates all the parameters throughout the submodels. The input parameters can be set manually or provided in json format. All the parameters for the model are stored in the paramobj object.</p>
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">jsonstruct</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">parseBattmoJson</span><span class="p">(</span><span class="nb">fullfile</span><span class="p">(</span><span class="s">&#39;ParameterData&#39;</span><span class="p">,</span><span class="s">&#39;BatteryCellParameters&#39;</span><span class="p">,</span><span class="s">&#39;LithiumIonBatteryCell&#39;</span><span class="p">,</span><span class="s">&#39;lithium_ion_battery_nmc_graphite.json&#39;</span><span class="p">));</span><span class="w"></span>
 
 <span class="c">% We define some shorthand names for simplicity.</span><span class="w"></span>

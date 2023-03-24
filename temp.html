@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Input Parameter Classes &mdash; BattMo  documentation</title>
+  <title>&lt;no title&gt; &mdash; BattMo  documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -16,9 +16,7 @@
         <script src="_static/doctools.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Battery cell" href="batteryinput.html" />
-    <link rel="prev" title="Tutorials" href="tutorials.html" /> 
+    <link rel="search" title="Search" href="search.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -37,16 +35,10 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul class="current">
+              <ul>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials.html">Getting started</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">BattMo Li-ion battery</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="batteryinput.html">Battery cell</a></li>
-<li class="toctree-l2"><a class="reference internal" href="batteryinput.html#electrode-components">Electrode components</a></li>
-<li class="toctree-l2"><a class="reference internal" href="batteryinput.html#electrolyte-components">Electrolyte components</a></li>
-<li class="toctree-l2"><a class="reference internal" href="controlinput.html">Control</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="inputs.html">BattMo Li-ion battery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="geometryinput.html">Geometries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bibliography.html">References</a></li>
 </ul>
@@ -65,9 +57,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Input Parameter Classes</li>
+      <li>&lt;no title&gt;</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="_sources/inputs.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/temp.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -75,12 +67,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="input-parameter-classes">
-<h1>Input Parameter Classes<a class="headerlink" href="#input-parameter-classes" title="Permalink to this headline"></a></h1>
-<p>We need to propagate inputs in each of submodels. To do that we use a hierarchy of input classes that is sent
-recursively to the models. The input class is named accordingly to the model it corresponds to and its source is located
-in the same folder.</p>
-<div class="toctree-wrapper compound">
+  <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="batteryinput.html">Battery cell</a></li>
 <li class="toctree-l1"><a class="reference internal" href="batteryinput.html#electrode-components">Electrode components</a><ul>
@@ -100,17 +87,26 @@ in the same folder.</p>
 <li class="toctree-l2"><a class="reference internal" href="controlinput.html#constant-current">Constant Current</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="geometryinput.html">Geometry</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="geometryinput.html#batterygenerator1d">BatteryGenerator1D</a></li>
+<li class="toctree-l2"><a class="reference internal" href="geometryinput.html#batterygenerator2d">BatteryGenerator2D</a></li>
+<li class="toctree-l2"><a class="reference internal" href="geometryinput.html#batterygenerator3d">BatteryGenerator3D</a></li>
+<li class="toctree-l2"><a class="reference internal" href="geometryinput.html#spiralbatterygenerator">SpiralBatteryGenerator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="geometryinput.html#coincellbatterygenerator">CoinCellBatteryGenerator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="geometryinput.html#blockbatterygenerator">BlockBatteryGenerator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="geometryinput.html#coincellsectorbatterygenerator">CoinCellSectorBatteryGenerator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="geometryinput.html#flatbatterygenerator">FlatBatteryGenerator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="geometryinput.html#sectorbatterygenerator">SectorBatteryGenerator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="geometryinput.html#base-class">Base class</a></li>
 </ul>
-</div>
+</li>
+</ul>
 </div>
 
 
            </div>
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="tutorials.html" class="btn btn-neutral float-left" title="Tutorials" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="batteryinput.html" class="btn btn-neutral float-right" title="Battery cell" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-    </div>
+          <footer>
 
   <hr/>
 

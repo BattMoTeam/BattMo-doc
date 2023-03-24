@@ -23,17 +23,13 @@ BattMo documentation
 =================================
 
 .. toctree::
-   :maxdepth: 2
               
    Installation <installation>
    Getting started <tutorials>
-
-   Advanced topics <advancedtopics>
-
-
-   BattMo API <inputs>
-
-
+   BattMo Li-ion battery <inputs>
+   Geometries <geometryinput>
+   References <bibliography>
+   
 Acknowledgements
 =================================
 BattMo has received funding from from the European Union’s Horizon 2020 innovation program under grant agreement numbers:

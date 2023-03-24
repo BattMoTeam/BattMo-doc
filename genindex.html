@@ -38,8 +38,9 @@
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials.html">Getting started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="advancedtopics.html">Advanced topics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="inputs.html">BattMo API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inputs.html">BattMo Li-ion battery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="geometryinput.html">Geometries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bibliography.html">References</a></li>
 </ul>
 
         </div>
@@ -74,10 +75,12 @@
  | <a href="#C"><strong>C</strong></a>
  | <a href="#D"><strong>D</strong></a>
  | <a href="#E"><strong>E</strong></a>
+ | <a href="#F"><strong>F</strong></a>
  | <a href="#G"><strong>G</strong></a>
  | <a href="#I"><strong>I</strong></a>
  | <a href="#J"><strong>J</strong></a>
  | <a href="#K"><strong>K</strong></a>
+ | <a href="#L"><strong>L</strong></a>
  | <a href="#N"><strong>N</strong></a>
  | <a href="#O"><strong>O</strong></a>
  | <a href="#P"><strong>P</strong></a>
@@ -86,6 +89,10 @@
  | <a href="#T"><strong>T</strong></a>
  | <a href="#U"><strong>U</strong></a>
  | <a href="#V"><strong>V</strong></a>
+ | <a href="#W"><strong>W</strong></a>
+ | <a href="#X"><strong>X</strong></a>
+ | <a href="#Y"><strong>Y</strong></a>
+ | <a href="#Z"><strong>Z</strong></a>
  
 </div>
 <h2 id="A">A</h2>
@@ -96,24 +103,28 @@
       <ul>
         <li><a href="electrodes.html#Electrochemistry.Electrode.ActiveMaterial">(Electrode attribute)</a>
 </li>
-        <li><a href="inputs.html#Electrochemistry.ElectrodeInputParams.ActiveMaterial">(ElectrodeInputParams attribute)</a>
+        <li><a href="batteryinput.html#Electrochemistry.ElectrodeInputParams.ActiveMaterial">(ElectrodeInputParams attribute)</a>
 </li>
       </ul></li>
       <li><a href="electrodes.html#Electrochemistry.ActiveMaterial.activeMaterialFraction">activeMaterialFraction (ActiveMaterial attribute)</a>
 
       <ul>
-        <li><a href="inputs.html#Electrochemistry.ActiveMaterialInputParams.activeMaterialFraction">(ActiveMaterialInputParams attribute)</a>
+        <li><a href="batteryinput.html#Electrochemistry.ActiveMaterialInputParams.activeMaterialFraction">(ActiveMaterialInputParams attribute)</a>
+</li>
+        <li><a href="batteryinput.html#Electrochemistry.FullSolidDiffusionModelInputParams.activeMaterialFraction">(FullSolidDiffusionModelInputParams attribute)</a>
 </li>
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="inputs.html#Electrochemistry.ActiveMaterialInputParams">ActiveMaterialInputParams (class in Electrochemistry)</a>
+      <li><a href="batteryinput.html#Electrochemistry.ActiveMaterialInputParams">ActiveMaterialInputParams (class in Electrochemistry)</a>
 </li>
       <li><a href="batterymodel.html#Battery.Battery.addStaticVariables">addStaticVariables() (Battery method)</a>
 </li>
       <li><a href="batterymodel.html#Battery.Battery.addVariables">addVariables() (Battery method)</a>
 </li>
-      <li><a href="inputs.html#Electrochemistry.InterfaceInputParams.alpha">alpha (InterfaceInputParams attribute)</a>
+      <li><a href="batteryinput.html#Electrochemistry.InterfaceInputParams.alpha">alpha (InterfaceInputParams attribute)</a>
+</li>
+      <li><a href="geometryinput.html#Battery.BatteryGeometry.SpiralBatteryGenerator.angleuniform">angleuniform (SpiralBatteryGenerator attribute)</a>
 </li>
       <li><a href="electrodes.html#Electrochemistry.ActiveMaterial.assembleAccumTerm">assembleAccumTerm() (ActiveMaterial method)</a>
 </li>
@@ -129,11 +140,21 @@
         <li><a href="batterymodel.html#module-Battery">(module)</a>
 </li>
       </ul></li>
+      <li><a href="geometryinput.html#module-Battery.BatteryGeometry">Battery.BatteryGeometry (module)</a>
+</li>
+      <li><a href="geometryinput.html#Battery.BatteryGeometry.BatteryGenerator">BatteryGenerator (class in Battery.BatteryGeometry)</a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="inputs.html#Battery.BatteryInputParams">BatteryInputParams (class in Battery)</a>
+      <li><a href="geometryinput.html#Battery.BatteryGeometry.BatteryGenerator1D">BatteryGenerator1D (class in Battery.BatteryGeometry)</a>
 </li>
-      <li><a href="inputs.html#Electrochemistry.ActiveMaterialInputParams.BruggemanCoefficient">BruggemanCoefficient (ActiveMaterialInputParams attribute)</a>
+      <li><a href="geometryinput.html#Battery.BatteryGeometry.BatteryGenerator2D">BatteryGenerator2D (class in Battery.BatteryGeometry)</a>
+</li>
+      <li><a href="geometryinput.html#Battery.BatteryGeometry.BatteryGenerator3D">BatteryGenerator3D (class in Battery.BatteryGeometry)</a>
+</li>
+      <li><a href="batteryinput.html#Battery.BatteryInputParams">BatteryInputParams (class in Battery)</a>
+</li>
+      <li><a href="batteryinput.html#Electrochemistry.ActiveMaterialInputParams.BruggemanCoefficient">BruggemanCoefficient (ActiveMaterialInputParams attribute)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -141,41 +162,71 @@
 <h2 id="C">C</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="inputs.html#Electrochemistry.InterfaceInputParams.cmax">cmax (InterfaceInputParams attribute)</a>
+      <li><a href="controlinput.html#Utilities.CcCvControlModelInputParams">CcCvControlModelInputParams (class in Utilities)</a>, <a href="controlinput.html#Utilities.CcCvControlModelInputParams">[1]</a>
 </li>
+      <li><a href="geometryinput.html#Battery.BatteryGeometry.BatteryGenerator1D.ccnenx">ccnenx (BatteryGenerator1D attribute)</a>
+
+      <ul>
+        <li><a href="geometryinput.html#Battery.BatteryGeometry.BatteryGenerator2D.ccnenx">(BatteryGenerator2D attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="geometryinput.html#Battery.BatteryGeometry.BatteryGenerator1D.ccpenx">ccpenx (BatteryGenerator1D attribute)</a>
+
+      <ul>
+        <li><a href="geometryinput.html#Battery.BatteryGeometry.BatteryGenerator2D.ccpenx">(BatteryGenerator2D attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="batteryinput.html#Electrochemistry.FullSolidDiffusionModelInputParams.cmax">cmax (FullSolidDiffusionModelInputParams attribute)</a>
+
+      <ul>
+        <li><a href="batteryinput.html#Electrochemistry.InterfaceInputParams.cmax">(InterfaceInputParams attribute)</a>
+</li>
+      </ul></li>
       <li><a href="batterymodel.html#Battery.Battery.cmin">cmin (Battery attribute)</a>
 </li>
-      <li><a href="inputs.html#Electrochemistry.ElectrolyteInputParams.compnames">compnames (ElectrolyteInputParams attribute)</a>
+      <li><a href="geometryinput.html#Battery.BatteryGeometry.CoinCellBatteryGenerator">CoinCellBatteryGenerator (class in Battery.BatteryGeometry)</a>
 </li>
-      <li><a href="inputs.html#Electrochemistry.ElectrolyteInputParams.Conductivity">Conductivity (ElectrolyteInputParams attribute)</a>
+      <li><a href="geometryinput.html#Battery.BatteryGeometry.CoinCellBatteryGenerator.compDims">compDims (CoinCellBatteryGenerator attribute)</a>
+</li>
+      <li><a href="batteryinput.html#Electrochemistry.ElectrolyteInputParams.compnames">compnames (ElectrolyteInputParams attribute)</a>
+</li>
+      <li><a href="batteryinput.html#Electrochemistry.ElectrolyteInputParams.Conductivity">Conductivity (ElectrolyteInputParams attribute)</a>
 </li>
       <li><a href="batterymodel.html#Battery.Battery.Control">Control (Battery attribute)</a>
 
       <ul>
-        <li><a href="inputs.html#Battery.BatteryInputParams.Control">(BatteryInputParams attribute)</a>
+        <li><a href="batteryinput.html#Battery.BatteryInputParams.Control">(BatteryInputParams attribute)</a>
 </li>
       </ul></li>
-      <li><a href="batterymodel.html#Battery.Battery.couplingNames">couplingNames (Battery attribute)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="inputs.html#Electrochemistry.ElectrodeInputParams.couplingTerm">couplingTerm (ElectrodeInputParams attribute)</a>
+      <li><a href="controlinput.html#Utilities.ControlModelInputParams">ControlModelInputParams (class in Utilities)</a>
+</li>
+      <li><a href="controlinput.html#Utilities.ControlModelInputParams.controlPolicy">controlPolicy (ControlModelInputParams attribute)</a>
+</li>
+      <li><a href="batterymodel.html#Battery.Battery.couplingNames">couplingNames (Battery attribute)</a>
+</li>
+      <li><a href="batteryinput.html#Electrochemistry.ElectrodeInputParams.couplingTerm">couplingTerm (ElectrodeInputParams attribute)</a>
 </li>
       <li><a href="batterymodel.html#Battery.Battery.couplingTerms">couplingTerms (Battery attribute)</a>
 
       <ul>
-        <li><a href="inputs.html#Battery.BatteryInputParams.couplingTerms">(BatteryInputParams attribute)</a>
+        <li><a href="batteryinput.html#Battery.BatteryInputParams.couplingTerms">(BatteryInputParams attribute)</a>
 </li>
       </ul></li>
+      <li><a href="controlinput.html#Utilities.ControlModelInputParams.CRate">CRate (ControlModelInputParams attribute)</a>
+</li>
       <li><a href="electrodes.html#Electrochemistry.CurrentCollector">CurrentCollector (class in Electrochemistry)</a>
 
       <ul>
         <li><a href="electrodes.html#Electrochemistry.Electrode.CurrentCollector">(Electrode attribute)</a>
 </li>
-        <li><a href="inputs.html#Electrochemistry.ElectrodeInputParams.CurrentCollector">(ElectrodeInputParams attribute)</a>
+        <li><a href="batteryinput.html#Electrochemistry.ElectrodeInputParams.CurrentCollector">(ElectrodeInputParams attribute)</a>
 </li>
       </ul></li>
-      <li><a href="inputs.html#Electrochemistry.CurrentCollectorInputParams">CurrentCollectorInputParams (class in Electrochemistry)</a>
+      <li><a href="batteryinput.html#Electrochemistry.CurrentCollectorInputParams">CurrentCollectorInputParams (class in Electrochemistry)</a>
+</li>
+      <li><a href="controlinput.html#Utilities.CvControlModelInputParams">CvControlModelInputParams (class in Utilities)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -183,28 +234,34 @@
 <h2 id="D">D</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="inputs.html#Electrochemistry.SolidDiffusionModelInputParams.D0">D0 (SolidDiffusionModelInputParams attribute)</a>
+      <li><a href="batteryinput.html#Electrochemistry.FullSolidDiffusionModelInputParams.D">D (FullSolidDiffusionModelInputParams attribute)</a>
 </li>
-      <li><a href="inputs.html#Electrochemistry.ActiveMaterialInputParams.density">density (ActiveMaterialInputParams attribute)</a>
+      <li><a href="batteryinput.html#Electrochemistry.SolidDiffusionModelInputParams.D0">D0 (SolidDiffusionModelInputParams attribute)</a>
+</li>
+      <li><a href="controlinput.html#Utilities.CcCvControlModelInputParams.dEdtLimit">dEdtLimit (CcCvControlModelInputParams attribute)</a>, <a href="controlinput.html#Utilities.CcCvControlModelInputParams.dEdtLimit">[1]</a>
+</li>
+      <li><a href="batteryinput.html#Electrochemistry.ActiveMaterialInputParams.density">density (ActiveMaterialInputParams attribute)</a>
 
       <ul>
-        <li><a href="inputs.html#Electrochemistry.CurrentCollectorInputParams.density">(CurrentCollectorInputParams attribute)</a>
+        <li><a href="batteryinput.html#Electrochemistry.CurrentCollectorInputParams.density">(CurrentCollectorInputParams attribute)</a>
 </li>
         <li><a href="electrolyte.html#Electrochemistry.Electrolyte.density">(Electrolyte attribute)</a>
 </li>
-        <li><a href="inputs.html#Electrochemistry.InterfaceInputParams.density">(InterfaceInputParams attribute)</a>
+        <li><a href="batteryinput.html#Electrochemistry.InterfaceInputParams.density">(InterfaceInputParams attribute)</a>
 </li>
         <li><a href="electrolyte.html#Electrochemistry.Separator.density">(Separator attribute)</a>
 </li>
-        <li><a href="inputs.html#Electrochemistry.SeparatorInputParams.density">(SeparatorInputParams attribute)</a>
+        <li><a href="batteryinput.html#Electrochemistry.SeparatorInputParams.density">(SeparatorInputParams attribute)</a>
 </li>
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="controlinput.html#Utilities.CcCvControlModelInputParams.dIdtLimit">dIdtLimit (CcCvControlModelInputParams attribute)</a>, <a href="controlinput.html#Utilities.CcCvControlModelInputParams.dIdtLimit">[1]</a>
+</li>
       <li><a href="electrodes.html#Electrochemistry.ActiveMaterial.diffusionModelType">diffusionModelType (ActiveMaterial attribute)</a>
 
       <ul>
-        <li><a href="inputs.html#Electrochemistry.ActiveMaterialInputParams.diffusionModelType">(ActiveMaterialInputParams attribute)</a>
+        <li><a href="batteryinput.html#Electrochemistry.ActiveMaterialInputParams.diffusionModelType">(ActiveMaterialInputParams attribute)</a>
 </li>
       </ul></li>
   </ul></td>
@@ -213,9 +270,9 @@
 <h2 id="E">E</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="inputs.html#Electrochemistry.SolidDiffusionModelInputParams.EaD">EaD (SolidDiffusionModelInputParams attribute)</a>
+      <li><a href="batteryinput.html#Electrochemistry.SolidDiffusionModelInputParams.EaD">EaD (SolidDiffusionModelInputParams attribute)</a>
 </li>
-      <li><a href="inputs.html#Electrochemistry.InterfaceInputParams.Eak">Eak (InterfaceInputParams attribute)</a>
+      <li><a href="batteryinput.html#Electrochemistry.InterfaceInputParams.Eak">Eak (InterfaceInputParams attribute)</a>
 </li>
       <li><a href="electrodes.html#Electrochemistry.ActiveMaterial.EffectiveDiffusionCoefficient">EffectiveDiffusionCoefficient (ActiveMaterial attribute)</a>
 </li>
@@ -230,43 +287,71 @@
       <li><a href="electrodes.html#Electrochemistry.ActiveMaterial.electricalConductivity">electricalConductivity (ActiveMaterial attribute)</a>
 
       <ul>
-        <li><a href="inputs.html#Electrochemistry.ActiveMaterialInputParams.electricalConductivity">(ActiveMaterialInputParams attribute)</a>
+        <li><a href="batteryinput.html#Electrochemistry.ActiveMaterialInputParams.electricalConductivity">(ActiveMaterialInputParams attribute)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="electrodes.html#module-Electrochemistry">Electrochemistry (module)</a>, <a href="electrolyte.html#module-Electrochemistry">[1]</a>
 </li>
       <li><a href="electrodes.html#Electrochemistry.Electrode">Electrode (class in Electrochemistry)</a>
 </li>
-      <li><a href="inputs.html#Electrochemistry.ElectrodeInputParams">ElectrodeInputParams (class in Electrochemistry)</a>
+      <li><a href="batteryinput.html#Electrochemistry.ElectrodeInputParams">ElectrodeInputParams (class in Electrochemistry)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="batterymodel.html#Battery.Battery.Electrolyte">Electrolyte (Battery attribute)</a>
 
       <ul>
-        <li><a href="inputs.html#Battery.BatteryInputParams.Electrolyte">(BatteryInputParams attribute)</a>
+        <li><a href="batteryinput.html#Battery.BatteryInputParams.Electrolyte">(BatteryInputParams attribute)</a>
 </li>
         <li><a href="electrolyte.html#Electrochemistry.Electrolyte">(class in Electrochemistry)</a>
 </li>
       </ul></li>
-      <li><a href="inputs.html#Electrochemistry.ElectrolyteInputParams">ElectrolyteInputParams (class in Electrochemistry)</a>
+      <li><a href="batteryinput.html#Electrochemistry.ElectrolyteInputParams">ElectrolyteInputParams (class in Electrochemistry)</a>
 </li>
-      <li><a href="inputs.html#Electrochemistry.ActiveMaterialInputParams.externalCouplingTerm">externalCouplingTerm (ActiveMaterialInputParams attribute)</a>
+      <li><a href="geometryinput.html#Battery.BatteryGeometry.BatteryGenerator3D.elyte_ny">elyte_ny (BatteryGenerator3D attribute)</a>
+</li>
+      <li><a href="batteryinput.html#Electrochemistry.ActiveMaterialInputParams.externalCouplingTerm">externalCouplingTerm (ActiveMaterialInputParams attribute)</a>
 
       <ul>
-        <li><a href="inputs.html#Electrochemistry.CurrentCollectorInputParams.externalCouplingTerm">(CurrentCollectorInputParams attribute)</a>
+        <li><a href="batteryinput.html#Electrochemistry.CurrentCollectorInputParams.externalCouplingTerm">(CurrentCollectorInputParams attribute)</a>
 </li>
       </ul></li>
+      <li><a href="geometryinput.html#Battery.BatteryGeometry.BatteryGenerator2D.externalHeatTransferCoefficient">externalHeatTransferCoefficient (BatteryGenerator2D attribute)</a>
+
+      <ul>
+        <li><a href="geometryinput.html#Battery.BatteryGeometry.BatteryGenerator3D.externalHeatTransferCoefficient">(BatteryGenerator3D attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="geometryinput.html#Battery.BatteryGeometry.BatteryGenerator2D.externalHeatTransferCoefficientTab">externalHeatTransferCoefficientTab (BatteryGenerator2D attribute)</a>
+
+      <ul>
+        <li><a href="geometryinput.html#Battery.BatteryGeometry.BatteryGenerator3D.externalHeatTransferCoefficientTab">(BatteryGenerator3D attribute)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="F">F</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="geometryinput.html#Battery.BatteryGeometry.BatteryGenerator1D.fac">fac (BatteryGenerator1D attribute)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="batteryinput.html#Electrochemistry.FullSolidDiffusionModelInputParams">FullSolidDiffusionModelInputParams (class in Electrochemistry)</a>
+</li>
   </ul></td>
 </tr></table>
 
 <h2 id="G">G</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="inputs.html#Battery.BatteryInputParams.G">G (BatteryInputParams attribute)</a>
+      <li><a href="geometryinput.html#Battery.BatteryGeometry.BatteryGenerator.G">G (BatteryGenerator attribute)</a>
 
       <ul>
-        <li><a href="inputs.html#Electrochemistry.InterfaceInputParams.G">(InterfaceInputParams attribute)</a>
+        <li><a href="batteryinput.html#Battery.BatteryInputParams.G">(BatteryInputParams attribute)</a>
+</li>
+        <li><a href="batteryinput.html#Electrochemistry.InterfaceInputParams.G">(InterfaceInputParams attribute)</a>
 </li>
       </ul></li>
   </ul></td>
@@ -279,25 +364,39 @@
 <h2 id="I">I</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="inputs.html#Electrochemistry.ElectrodeInputParams.include_current_collectors">include_current_collectors (ElectrodeInputParams attribute)</a>
+      <li><a href="controlinput.html#Utilities.IEswitchControlModelInputParams">IEswitchControlModelInputParams (class in Utilities)</a>
+</li>
+      <li><a href="geometryinput.html#Battery.BatteryGeometry.BatteryGenerator1D.include_current_collectors">include_current_collectors (BatteryGenerator1D attribute)</a>
+
+      <ul>
+        <li><a href="geometryinput.html#Battery.BatteryGeometry.BatteryGenerator2D.include_current_collectors">(BatteryGenerator2D attribute)</a>
+</li>
+        <li><a href="batteryinput.html#Electrochemistry.ElectrodeInputParams.include_current_collectors">(ElectrodeInputParams attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="controlinput.html#Utilities.ControlModelInputParams.initialControl">initialControl (ControlModelInputParams attribute)</a>
 </li>
       <li><a href="batterymodel.html#Battery.Battery.initT">initT (Battery attribute)</a>
 
       <ul>
-        <li><a href="inputs.html#Battery.BatteryInputParams.initT">(BatteryInputParams attribute)</a>
+        <li><a href="batteryinput.html#Battery.BatteryInputParams.initT">(BatteryInputParams attribute)</a>
 </li>
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="controlinput.html#Utilities.CvControlModelInputParams.inputVoltage">inputVoltage (CvControlModelInputParams attribute)</a>
+</li>
+      <li><a href="geometryinput.html#Battery.BatteryGeometry.BatteryGenerator3D.int_elyte_nx">int_elyte_nx (BatteryGenerator3D attribute)</a>
+</li>
       <li><a href="electrodes.html#Electrochemistry.ActiveMaterial.InterDiffusionCoefficient">InterDiffusionCoefficient (ActiveMaterial attribute)</a>
 </li>
       <li><a href="electrodes.html#Electrochemistry.ActiveMaterial.Interface">Interface (ActiveMaterial attribute)</a>
 
       <ul>
-        <li><a href="inputs.html#Electrochemistry.ActiveMaterialInputParams.Interface">(ActiveMaterialInputParams attribute)</a>
+        <li><a href="batteryinput.html#Electrochemistry.ActiveMaterialInputParams.Interface">(ActiveMaterialInputParams attribute)</a>
 </li>
       </ul></li>
-      <li><a href="inputs.html#Electrochemistry.InterfaceInputParams">InterfaceInputParams (class in Electrochemistry)</a>
+      <li><a href="batteryinput.html#Electrochemistry.InterfaceInputParams">InterfaceInputParams (class in Electrochemistry)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -305,7 +404,7 @@
 <h2 id="J">J</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="inputs.html#Electrochemistry.InterfaceInputParams.j0">j0 (InterfaceInputParams attribute)</a>
+      <li><a href="batteryinput.html#Electrochemistry.InterfaceInputParams.j0">j0 (InterfaceInputParams attribute)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -313,7 +412,15 @@
 <h2 id="K">K</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="inputs.html#Electrochemistry.InterfaceInputParams.k0">k0 (InterfaceInputParams attribute)</a>
+      <li><a href="batteryinput.html#Electrochemistry.InterfaceInputParams.k0">k0 (InterfaceInputParams attribute)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="L">L</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="controlinput.html#Utilities.ControlModelInputParams.lowerCutoffVoltage">lowerCutoffVoltage (ControlModelInputParams attribute)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -321,23 +428,55 @@
 <h2 id="N">N</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="inputs.html#Electrochemistry.InterfaceInputParams.n">n (InterfaceInputParams attribute)</a>
+      <li><a href="batteryinput.html#Electrochemistry.FullSolidDiffusionModelInputParams.N">N (FullSolidDiffusionModelInputParams attribute)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="batteryinput.html#Electrochemistry.InterfaceInputParams.n">n (InterfaceInputParams attribute)</a>
+</li>
+      <li><a href="geometryinput.html#Battery.BatteryGeometry.SpiralBatteryGenerator.nas">nas (SpiralBatteryGenerator attribute)</a>
+</li>
+      <li><a href="geometryinput.html#Battery.BatteryGeometry.BatteryGenerator3D.ne_am_nz">ne_am_nz (BatteryGenerator3D attribute)</a>
+</li>
+      <li><a href="geometryinput.html#Battery.BatteryGeometry.BatteryGenerator3D.ne_cc_nx">ne_cc_nx (BatteryGenerator3D attribute)</a>
+</li>
+      <li><a href="geometryinput.html#Battery.BatteryGeometry.BatteryGenerator3D.ne_cc_ny">ne_cc_ny (BatteryGenerator3D attribute)</a>
+</li>
+      <li><a href="geometryinput.html#Battery.BatteryGeometry.BatteryGenerator3D.ne_cc_nz">ne_cc_nz (BatteryGenerator3D attribute)</a>
+</li>
       <li><a href="batterymodel.html#Battery.Battery.NegativeElectrode">NegativeElectrode (Battery attribute)</a>
 
       <ul>
-        <li><a href="inputs.html#Battery.BatteryInputParams.NegativeElectrode">(BatteryInputParams attribute)</a>
+        <li><a href="batteryinput.html#Battery.BatteryInputParams.NegativeElectrode">(BatteryInputParams attribute)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="geometryinput.html#Battery.BatteryGeometry.BatteryGenerator1D.nenr">nenr (BatteryGenerator1D attribute)</a>
+</li>
+      <li><a href="geometryinput.html#Battery.BatteryGeometry.BatteryGenerator1D.nenx">nenx (BatteryGenerator1D attribute)</a>
+
+      <ul>
+        <li><a href="geometryinput.html#Battery.BatteryGeometry.BatteryGenerator2D.nenx">(BatteryGenerator2D attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="geometryinput.html#Battery.BatteryGeometry.SpiralBatteryGenerator.nL">nL (SpiralBatteryGenerator attribute)</a>
+</li>
+      <li><a href="batteryinput.html#Electrochemistry.FullSolidDiffusionModelInputParams.np">np (FullSolidDiffusionModelInputParams attribute)</a>
+</li>
+      <li><a href="geometryinput.html#Battery.BatteryGeometry.SpiralBatteryGenerator.nrDict">nrDict (SpiralBatteryGenerator attribute)</a>
+</li>
+      <li><a href="geometryinput.html#Battery.BatteryGeometry.CoinCellBatteryGenerator.numAngular">numAngular (CoinCellBatteryGenerator attribute)</a>
+</li>
+      <li><a href="geometryinput.html#Battery.BatteryGeometry.SpiralBatteryGenerator.nwindings">nwindings (SpiralBatteryGenerator attribute)</a>
+</li>
+      <li><a href="geometryinput.html#Battery.BatteryGeometry.BatteryGenerator2D.ny">ny (BatteryGenerator2D attribute)</a>
+</li>
   </ul></td>
 </tr></table>
 
 <h2 id="O">O</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="inputs.html#Electrochemistry.InterfaceInputParams.OCP">OCP (InterfaceInputParams attribute)</a>
+      <li><a href="batteryinput.html#Electrochemistry.InterfaceInputParams.OCP">OCP (InterfaceInputParams attribute)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -345,20 +484,38 @@
 <h2 id="P">P</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="electrolyte.html#Electrochemistry.Separator.porosity">porosity (Separator attribute)</a>
+      <li><a href="geometryinput.html#Battery.BatteryGeometry.BatteryGenerator3D.pe_am_nz">pe_am_nz (BatteryGenerator3D attribute)</a>
+</li>
+      <li><a href="geometryinput.html#Battery.BatteryGeometry.BatteryGenerator3D.pe_cc_nx">pe_cc_nx (BatteryGenerator3D attribute)</a>
+</li>
+      <li><a href="geometryinput.html#Battery.BatteryGeometry.BatteryGenerator3D.pe_cc_ny">pe_cc_ny (BatteryGenerator3D attribute)</a>
+</li>
+      <li><a href="geometryinput.html#Battery.BatteryGeometry.BatteryGenerator3D.pe_cc_nz">pe_cc_nz (BatteryGenerator3D attribute)</a>
+</li>
+      <li><a href="geometryinput.html#Battery.BatteryGeometry.BatteryGenerator1D.penr">penr (BatteryGenerator1D attribute)</a>
+</li>
+      <li><a href="geometryinput.html#Battery.BatteryGeometry.BatteryGenerator1D.penx">penx (BatteryGenerator1D attribute)</a>
 
       <ul>
-        <li><a href="inputs.html#Electrochemistry.SeparatorInputParams.porosity">(SeparatorInputParams attribute)</a>
+        <li><a href="geometryinput.html#Battery.BatteryGeometry.BatteryGenerator2D.penx">(BatteryGenerator2D attribute)</a>
 </li>
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="electrolyte.html#Electrochemistry.Separator.porosity">porosity (Separator attribute)</a>
+
+      <ul>
+        <li><a href="batteryinput.html#Electrochemistry.SeparatorInputParams.porosity">(SeparatorInputParams attribute)</a>
+</li>
+      </ul></li>
       <li><a href="batterymodel.html#Battery.Battery.PositiveElectrode">PositiveElectrode (Battery attribute)</a>
 
       <ul>
-        <li><a href="inputs.html#Battery.BatteryInputParams.PositiveElectrode">(BatteryInputParams attribute)</a>
+        <li><a href="batteryinput.html#Battery.BatteryInputParams.PositiveElectrode">(BatteryInputParams attribute)</a>
 </li>
       </ul></li>
+      <li><a href="geometryinput.html#Battery.BatteryGeometry.SpiralBatteryGenerator.positiveExtCurrentFaces">positiveExtCurrentFaces (SpiralBatteryGenerator attribute)</a>
+</li>
   </ul></td>
 </tr></table>
 
@@ -377,7 +534,9 @@
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="inputs.html#Electrochemistry.SolidDiffusionModelInputParams.rp">rp (SolidDiffusionModelInputParams attribute)</a>
+      <li><a href="geometryinput.html#Battery.BatteryGeometry.SpiralBatteryGenerator.rInner">rInner (SpiralBatteryGenerator attribute)</a>
+</li>
+      <li><a href="batteryinput.html#Electrochemistry.SolidDiffusionModelInputParams.rp">rp (SolidDiffusionModelInputParams attribute)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -385,76 +544,136 @@
 <h2 id="S">S</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="geometryinput.html#Battery.BatteryGeometry.BatteryGenerator3D.sep_nz">sep_nz (BatteryGenerator3D attribute)</a>
+</li>
       <li><a href="electrolyte.html#Electrochemistry.Separator">Separator (class in Electrochemistry)</a>
 
       <ul>
         <li><a href="electrolyte.html#Electrochemistry.Electrolyte.Separator">(Electrolyte attribute)</a>
 </li>
-        <li><a href="inputs.html#Electrochemistry.ElectrolyteInputParams.Separator">(ElectrolyteInputParams attribute)</a>
+        <li><a href="batteryinput.html#Electrochemistry.ElectrolyteInputParams.Separator">(ElectrolyteInputParams attribute)</a>
 </li>
       </ul></li>
-      <li><a href="inputs.html#Electrochemistry.SeparatorInputParams">SeparatorInputParams (class in Electrochemistry)</a>
+      <li><a href="batteryinput.html#Electrochemistry.SeparatorInputParams">SeparatorInputParams (class in Electrochemistry)</a>
 </li>
+      <li><a href="geometryinput.html#Battery.BatteryGeometry.BatteryGenerator1D.sepnx">sepnx (BatteryGenerator1D attribute)</a>
+
+      <ul>
+        <li><a href="geometryinput.html#Battery.BatteryGeometry.BatteryGenerator2D.sepnx">(BatteryGenerator2D attribute)</a>
+</li>
+      </ul></li>
       <li><a href="electrodes.html#Electrochemistry.Electrode.setupActiveMaterial">setupActiveMaterial() (Electrode method)</a>
 </li>
-      <li><a href="electrodes.html#Electrochemistry.Electrode.setupCurrentCollector">setupCurrentCollector() (Electrode method)</a>
+      <li><a href="geometryinput.html#Battery.BatteryGeometry.BatteryGenerator.setupActiveMaterialBcCoupTerm">setupActiveMaterialBcCoupTerm() (BatteryGenerator method)</a>
+</li>
+      <li><a href="geometryinput.html#Battery.BatteryGeometry.BatteryGenerator.setupActiveMaterialGrid">setupActiveMaterialGrid() (BatteryGenerator method)</a>
+</li>
+      <li><a href="geometryinput.html#Battery.BatteryGeometry.BatteryGenerator.setupBatteryInputParams">setupBatteryInputParams() (BatteryGenerator method)</a>
+</li>
+      <li><a href="geometryinput.html#Battery.BatteryGeometry.BatteryGenerator.setupCurrentCollector">setupCurrentCollector() (BatteryGenerator method)</a>
+
+      <ul>
+        <li><a href="electrodes.html#Electrochemistry.Electrode.setupCurrentCollector">(Electrode method)</a>
+</li>
+      </ul></li>
+      <li><a href="geometryinput.html#Battery.BatteryGeometry.BatteryGenerator.setupCurrentCollectorActiveMaterialCoupTerm">setupCurrentCollectorActiveMaterialCoupTerm() (BatteryGenerator method)</a>
+</li>
+      <li><a href="geometryinput.html#Battery.BatteryGeometry.BatteryGenerator.setupCurrentCollectorBcCoupTerm">setupCurrentCollectorBcCoupTerm() (BatteryGenerator method)</a>
+</li>
+      <li><a href="geometryinput.html#Battery.BatteryGeometry.BatteryGenerator.setupCurrentCollectorGrid">setupCurrentCollectorGrid() (BatteryGenerator method)</a>
+</li>
+      <li><a href="geometryinput.html#Battery.BatteryGeometry.BatteryGenerator.setupElectrode">setupElectrode() (BatteryGenerator method)</a>
+</li>
+      <li><a href="geometryinput.html#Battery.BatteryGeometry.BatteryGenerator.setupElectrodeElectrolyteCoupTerm">setupElectrodeElectrolyteCoupTerm() (BatteryGenerator method)</a>
+</li>
+      <li><a href="geometryinput.html#Battery.BatteryGeometry.BatteryGenerator.setupElectrodeGrid">setupElectrodeGrid() (BatteryGenerator method)</a>
+</li>
+      <li><a href="geometryinput.html#Battery.BatteryGeometry.BatteryGenerator.setupElectrodes">setupElectrodes() (BatteryGenerator method)</a>
+</li>
+      <li><a href="geometryinput.html#Battery.BatteryGeometry.BatteryGenerator.setupElectrolyte">setupElectrolyte() (BatteryGenerator method)</a>
+</li>
+      <li><a href="geometryinput.html#Battery.BatteryGeometry.BatteryGenerator.setupElectrolyteGrid">setupElectrolyteGrid() (BatteryGenerator method)</a>
 </li>
       <li><a href="batterymodel.html#Battery.Battery.setupElectrolyteModel">setupElectrolyteModel() (Battery method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="batterymodel.html#Battery.Battery.setupExternalCouplingNegativeElectrode">setupExternalCouplingNegativeElectrode() (Battery method)</a>
 </li>
       <li><a href="batterymodel.html#Battery.Battery.setupExternalCouplingPositiveElectrode">setupExternalCouplingPositiveElectrode() (Battery method)</a>
 </li>
+      <li><a href="geometryinput.html#Battery.BatteryGeometry.BatteryGenerator.setupGrid">setupGrid() (BatteryGenerator method)</a>
+
+      <ul>
+        <li><a href="geometryinput.html#Battery.BatteryGeometry.BatteryGenerator3D.setupGrid">(BatteryGenerator3D method)</a>
+</li>
+      </ul></li>
       <li><a href="batterymodel.html#Battery.Battery.setupInitialState">setupInitialState() (Battery method)</a>
 </li>
-      <li><a href="batterymodel.html#Battery.Battery.setupThermalModel">setupThermalModel() (Battery method)</a>
+      <li><a href="geometryinput.html#Battery.BatteryGeometry.BatteryGenerator.setupSeparatorGrid">setupSeparatorGrid() (BatteryGenerator method)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="batterymodel.html#Battery.Battery.setupThermalModel">setupThermalModel() (Battery method)</a>
+
+      <ul>
+        <li><a href="geometryinput.html#Battery.BatteryGeometry.BatteryGenerator.setupThermalModel">(BatteryGenerator method)</a>
+</li>
+        <li><a href="geometryinput.html#Battery.BatteryGeometry.SpiralBatteryGenerator.setupThermalModel">(SpiralBatteryGenerator method)</a>
+</li>
+      </ul></li>
+      <li><a href="batteryinput.html#Electrochemistry.SimplifiedSolidDiffusionModelInputParams">SimplifiedSolidDiffusionModelInputParams (class in Electrochemistry)</a>
+</li>
       <li><a href="batterymodel.html#Battery.Battery.SOC">SOC (Battery attribute)</a>
 
       <ul>
-        <li><a href="inputs.html#Battery.BatteryInputParams.SOC">(BatteryInputParams attribute)</a>
+        <li><a href="batteryinput.html#Battery.BatteryInputParams.SOC">(BatteryInputParams attribute)</a>
 </li>
       </ul></li>
-      <li><a href="inputs.html#Electrochemistry.ActiveMaterialInputParams.SolidDiffusion">SolidDiffusion (ActiveMaterialInputParams attribute)</a>
+      <li><a href="batteryinput.html#Electrochemistry.ActiveMaterialInputParams.SolidDiffusion">SolidDiffusion (ActiveMaterialInputParams attribute)</a>
 </li>
-      <li><a href="inputs.html#Electrochemistry.SolidDiffusionModelInputParams">SolidDiffusionModelInputParams (class in Electrochemistry)</a>
+      <li><a href="batteryinput.html#Electrochemistry.SolidDiffusionModelInputParams">SolidDiffusionModelInputParams (class in Electrochemistry)</a>
 </li>
-      <li><a href="inputs.html#Electrochemistry.ElectrolyteInputParams.sp">sp (ElectrolyteInputParams attribute)</a>
+      <li><a href="batteryinput.html#Electrochemistry.ElectrolyteInputParams.sp">sp (ElectrolyteInputParams attribute)</a>
 </li>
       <li><a href="electrodes.html#Electrochemistry.ActiveMaterial.specificHeatCapacity">specificHeatCapacity (ActiveMaterial attribute)</a>
 
       <ul>
-        <li><a href="inputs.html#Electrochemistry.ActiveMaterialInputParams.specificHeatCapacity">(ActiveMaterialInputParams attribute)</a>
+        <li><a href="batteryinput.html#Electrochemistry.ActiveMaterialInputParams.specificHeatCapacity">(ActiveMaterialInputParams attribute)</a>
 </li>
-        <li><a href="inputs.html#Electrochemistry.CurrentCollectorInputParams.specificHeatCapacity">(CurrentCollectorInputParams attribute)</a>
+        <li><a href="batteryinput.html#Electrochemistry.CurrentCollectorInputParams.specificHeatCapacity">(CurrentCollectorInputParams attribute)</a>
 </li>
         <li><a href="electrolyte.html#Electrochemistry.Electrolyte.specificHeatCapacity">(Electrolyte attribute)</a>
 </li>
-        <li><a href="inputs.html#Electrochemistry.ElectrolyteInputParams.specificHeatCapacity">(ElectrolyteInputParams attribute)</a>
+        <li><a href="batteryinput.html#Electrochemistry.ElectrolyteInputParams.specificHeatCapacity">(ElectrolyteInputParams attribute)</a>
 </li>
         <li><a href="electrolyte.html#Electrochemistry.Separator.specificHeatCapacity">(Separator attribute)</a>
 </li>
-        <li><a href="inputs.html#Electrochemistry.SeparatorInputParams.specificHeatCapacity">(SeparatorInputParams attribute)</a>
+        <li><a href="batteryinput.html#Electrochemistry.SeparatorInputParams.specificHeatCapacity">(SeparatorInputParams attribute)</a>
 </li>
       </ul></li>
+      <li><a href="geometryinput.html#Battery.BatteryGeometry.SpiralBatteryGenerator">SpiralBatteryGenerator (class in Battery.BatteryGeometry)</a>
+</li>
   </ul></td>
 </tr></table>
 
 <h2 id="T">T</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="geometryinput.html#Battery.BatteryGeometry.SpiralBatteryGenerator.tabparams">tabparams (SpiralBatteryGenerator attribute)</a>
+</li>
+      <li><a href="geometryinput.html#Battery.BatteryGeometry.SpiralBatteryGenerator.tabwidths">tabwidths (SpiralBatteryGenerator attribute)</a>
+</li>
+      <li><a href="geometryinput.html#Battery.BatteryGeometry.SpiralBatteryGenerator.tagdict">tagdict (SpiralBatteryGenerator attribute)</a>
+</li>
       <li><a href="electrodes.html#Electrochemistry.ActiveMaterial.thermalConductivity">thermalConductivity (ActiveMaterial attribute)</a>
 
       <ul>
-        <li><a href="inputs.html#Electrochemistry.ActiveMaterialInputParams.thermalConductivity">(ActiveMaterialInputParams attribute)</a>
+        <li><a href="batteryinput.html#Electrochemistry.ActiveMaterialInputParams.thermalConductivity">(ActiveMaterialInputParams attribute)</a>
 </li>
-        <li><a href="inputs.html#Electrochemistry.CurrentCollectorInputParams.thermalConductivity">(CurrentCollectorInputParams attribute)</a>
+        <li><a href="batteryinput.html#Electrochemistry.CurrentCollectorInputParams.thermalConductivity">(CurrentCollectorInputParams attribute)</a>
 </li>
         <li><a href="electrolyte.html#Electrochemistry.Separator.thermalConductivity">(Separator attribute)</a>
 </li>
-        <li><a href="inputs.html#Electrochemistry.SeparatorInputParams.thermalConductivity">(SeparatorInputParams attribute)</a>
+        <li><a href="batteryinput.html#Electrochemistry.SeparatorInputParams.thermalConductivity">(SeparatorInputParams attribute)</a>
 </li>
       </ul></li>
   </ul></td>
@@ -462,13 +681,21 @@
       <li><a href="batterymodel.html#Battery.Battery.ThermalModel">ThermalModel (Battery attribute)</a>
 
       <ul>
-        <li><a href="inputs.html#Battery.BatteryInputParams.ThermalModel">(BatteryInputParams attribute)</a>
+        <li><a href="batteryinput.html#Battery.BatteryInputParams.ThermalModel">(BatteryInputParams attribute)</a>
 </li>
       </ul></li>
-      <li><a href="inputs.html#Electrochemistry.InterfaceInputParams.theta0">theta0 (InterfaceInputParams attribute)</a>
+      <li><a href="batteryinput.html#Electrochemistry.FullSolidDiffusionModelInputParams.theta0">theta0 (FullSolidDiffusionModelInputParams attribute)</a>
+
+      <ul>
+        <li><a href="batteryinput.html#Electrochemistry.InterfaceInputParams.theta0">(InterfaceInputParams attribute)</a>
 </li>
-      <li><a href="inputs.html#Electrochemistry.InterfaceInputParams.theta100">theta100 (InterfaceInputParams attribute)</a>
+      </ul></li>
+      <li><a href="batteryinput.html#Electrochemistry.FullSolidDiffusionModelInputParams.theta100">theta100 (FullSolidDiffusionModelInputParams attribute)</a>
+
+      <ul>
+        <li><a href="batteryinput.html#Electrochemistry.InterfaceInputParams.theta100">(InterfaceInputParams attribute)</a>
 </li>
+      </ul></li>
   </ul></td>
 </tr></table>
 
@@ -478,6 +705,8 @@
       <li><a href="electrodes.html#Electrochemistry.ActiveMaterial.updateAfterConvergence">updateAfterConvergence() (ActiveMaterial method)</a>
 </li>
       <li><a href="electrodes.html#Electrochemistry.ActiveMaterial.updateAverageConcentration">updateAverageConcentration() (ActiveMaterial method)</a>
+</li>
+      <li><a href="geometryinput.html#Battery.BatteryGeometry.BatteryGenerator.updateBatteryInputParams">updateBatteryInputParams() (BatteryGenerator method)</a>
 </li>
       <li><a href="electrodes.html#Electrochemistry.Electrode.updateCoupling">updateCoupling() (Electrode method)</a>
 </li>
@@ -495,10 +724,10 @@
 </li>
       <li><a href="electrodes.html#Electrochemistry.ActiveMaterial.updateSOC">updateSOC() (ActiveMaterial method)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="batterymodel.html#Battery.Battery.updateTemperature">updateTemperature() (Battery method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="batterymodel.html#Battery.Battery.updateThermalChemicalSourceTerms">updateThermalChemicalSourceTerms() (Battery method)</a>
 </li>
       <li><a href="batterymodel.html#Battery.Battery.updateThermalIrreversibleReactionSourceTerms">updateThermalIrreversibleReactionSourceTerms() (Battery method)</a>
@@ -509,15 +738,23 @@
 </li>
       <li><a href="batterymodel.html#Battery.Battery.updateThermalReversibleReactionSourceTerms">updateThermalReversibleReactionSourceTerms() (Battery method)</a>
 </li>
+      <li><a href="controlinput.html#Utilities.ControlModelInputParams.upperCutoffVoltage">upperCutoffVoltage (ControlModelInputParams attribute)</a>
+</li>
       <li><a href="batterymodel.html#Battery.Battery.use_particle_diffusion">use_particle_diffusion (Battery attribute)</a>
 
       <ul>
-        <li><a href="inputs.html#Battery.BatteryInputParams.use_particle_diffusion">(BatteryInputParams attribute)</a>
+        <li><a href="batteryinput.html#Battery.BatteryInputParams.use_particle_diffusion">(BatteryInputParams attribute)</a>
 </li>
       </ul></li>
-      <li><a href="inputs.html#Battery.BatteryInputParams.use_thermal">use_thermal (BatteryInputParams attribute)</a>
+      <li><a href="geometryinput.html#Battery.BatteryGeometry.BatteryGenerator1D.use_thermal">use_thermal (BatteryGenerator1D attribute)</a>
+
+      <ul>
+        <li><a href="geometryinput.html#Battery.BatteryGeometry.BatteryGenerator2D.use_thermal">(BatteryGenerator2D attribute)</a>
 </li>
-      <li><a href="batterymodel.html#module-Utilities">Utilities (module)</a>
+        <li><a href="batteryinput.html#Battery.BatteryInputParams.use_thermal">(BatteryInputParams attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="batterymodel.html#module-Utilities">Utilities (module)</a>, <a href="controlinput.html#module-Utilities">[1]</a>
 </li>
   </ul></td>
 </tr></table>
@@ -530,19 +767,63 @@
       <ul>
         <li><a href="electrolyte.html#Electrochemistry.Electrolyte.volumeFraction">(Electrolyte attribute)</a>
 </li>
-        <li><a href="inputs.html#Electrochemistry.InterfaceInputParams.volumeFraction">(InterfaceInputParams attribute)</a>
+        <li><a href="batteryinput.html#Electrochemistry.FullSolidDiffusionModelInputParams.volumeFraction">(FullSolidDiffusionModelInputParams attribute)</a>
+</li>
+        <li><a href="batteryinput.html#Electrochemistry.InterfaceInputParams.volumeFraction">(InterfaceInputParams attribute)</a>
 </li>
         <li><a href="electrolyte.html#Electrochemistry.Separator.volumeFraction">(Separator attribute)</a>
 </li>
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="inputs.html#Electrochemistry.InterfaceInputParams.volumetricSurfaceArea">volumetricSurfaceArea (InterfaceInputParams attribute)</a>
+      <li><a href="batteryinput.html#Electrochemistry.InterfaceInputParams.volumetricSurfaceArea">volumetricSurfaceArea (InterfaceInputParams attribute)</a>
 
       <ul>
-        <li><a href="inputs.html#Electrochemistry.SolidDiffusionModelInputParams.volumetricSurfaceArea">(SolidDiffusionModelInputParams attribute)</a>
+        <li><a href="batteryinput.html#Electrochemistry.SolidDiffusionModelInputParams.volumetricSurfaceArea">(SolidDiffusionModelInputParams attribute)</a>
 </li>
       </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="W">W</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="geometryinput.html#Battery.BatteryGeometry.SpiralBatteryGenerator.widthDict">widthDict (SpiralBatteryGenerator attribute)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="X">X</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="geometryinput.html#Battery.BatteryGeometry.BatteryGenerator1D.xlength">xlength (BatteryGenerator1D attribute)</a>
+
+      <ul>
+        <li><a href="geometryinput.html#Battery.BatteryGeometry.BatteryGenerator2D.xlength">(BatteryGenerator2D attribute)</a>
+</li>
+        <li><a href="geometryinput.html#Battery.BatteryGeometry.BatteryGenerator3D.xlength">(BatteryGenerator3D attribute)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="Y">Y</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="geometryinput.html#Battery.BatteryGeometry.BatteryGenerator2D.ylength">ylength (BatteryGenerator2D attribute)</a>
+
+      <ul>
+        <li><a href="geometryinput.html#Battery.BatteryGeometry.BatteryGenerator3D.ylength">(BatteryGenerator3D attribute)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="Z">Z</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="geometryinput.html#Battery.BatteryGeometry.BatteryGenerator3D.zlength">zlength (BatteryGenerator3D attribute)</a>
+</li>
   </ul></td>
 </tr></table>
 

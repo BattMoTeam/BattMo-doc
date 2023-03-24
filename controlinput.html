@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Control models &mdash; BattMo  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Geometry models" href="geometryinput.html" />
+    <link rel="prev" title="Battery cell" href="batteryinput.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> BattMo
+            <img src="_static/battmologo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Getting started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="inputs.html">BattMo Li-ion battery</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="batteryinput.html">Battery cell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="batteryinput.html#electrode-components">Electrode components</a></li>
+<li class="toctree-l2"><a class="reference internal" href="batteryinput.html#electrolyte-components">Electrolyte components</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Control</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#base-control-model">Base Control Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ieswitch-control">IESwitch Control</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#constant-current-constant-voltage-control">Constant Current Constant Voltage Control</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#constant-voltage">Constant Voltage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#constant-current">Constant Current</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="geometryinput.html">Geometries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bibliography.html">References</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">BattMo</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="inputs.html">Input Parameter Classes</a> &raquo;</li>
+      <li>Control models</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/controlinput.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="module-Utilities">
+<span id="control-models"></span><h1>Control models<a class="headerlink" href="#module-Utilities" title="Permalink to this headline"></a></h1>
+<p>Description of the input parameter classes for the control models</p>
+<div class="section" id="base-control-model">
+<h2>Base Control Model<a class="headerlink" href="#base-control-model" title="Permalink to this headline"></a></h2>
+<dl class="mat class">
+<dt class="sig sig-object mat" id="Utilities.ControlModelInputParams">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">ControlModelInputParams</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">jsonstruct</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Utilities.ControlModelInputParams" title="Permalink to this definition"></a></dt>
+<dd><p>Base class for input parameters for control model</p>
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="Utilities.ControlModelInputParams.CRate">
+<span class="sig-name descname"><span class="pre">CRate</span></span><a class="headerlink" href="#Utilities.ControlModelInputParams.CRate" title="Permalink to this definition"></a></dt>
+<dd><p>C Rate</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="Utilities.ControlModelInputParams.controlPolicy">
+<span class="sig-name descname"><span class="pre">controlPolicy</span></span><a class="headerlink" href="#Utilities.ControlModelInputParams.controlPolicy" title="Permalink to this definition"></a></dt>
+<dd><p>Control policy (sring). It can take following values</p>
+<ul class="simple">
+<li><p>‘CCCV’</p></li>
+<li><p>‘IEswitch’</p></li>
+<li><p>‘CV’</p></li>
+<li><p>‘CC’</p></li>
+</ul>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="Utilities.ControlModelInputParams.initialControl">
+<span class="sig-name descname"><span class="pre">initialControl</span></span><a class="headerlink" href="#Utilities.ControlModelInputParams.initialControl" title="Permalink to this definition"></a></dt>
+<dd><p>Initial control at start. It is a string that can be equal to
+- ‘charging’
+- ‘discharging’</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="Utilities.ControlModelInputParams.lowerCutoffVoltage">
+<span class="sig-name descname"><span class="pre">lowerCutoffVoltage</span></span><a class="headerlink" href="#Utilities.ControlModelInputParams.lowerCutoffVoltage" title="Permalink to this definition"></a></dt>
+<dd><p>Lower cut-off voltage limit</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="Utilities.ControlModelInputParams.upperCutoffVoltage">
+<span class="sig-name descname"><span class="pre">upperCutoffVoltage</span></span><a class="headerlink" href="#Utilities.ControlModelInputParams.upperCutoffVoltage" title="Permalink to this definition"></a></dt>
+<dd><p>Lower cut-off voltage limit</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="ieswitch-control">
+<h2>IESwitch Control<a class="headerlink" href="#ieswitch-control" title="Permalink to this headline"></a></h2>
+<dl class="mat class">
+<dt class="sig sig-object mat" id="Utilities.IEswitchControlModelInputParams">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">IEswitchControlModelInputParams</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">jsonstruct</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Utilities.IEswitchControlModelInputParams" title="Permalink to this definition"></a></dt>
+<dd><p>IE switch control model. First start with current control and switch to voltage control when lower or upper limit is reached.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="constant-current-constant-voltage-control">
+<h2>Constant Current Constant Voltage Control<a class="headerlink" href="#constant-current-constant-voltage-control" title="Permalink to this headline"></a></h2>
+<dl class="mat class">
+<dt class="sig sig-object mat" id="Utilities.CcCvControlModelInputParams">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">CcCvControlModelInputParams</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">jsonstruct</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Utilities.CcCvControlModelInputParams" title="Permalink to this definition"></a></dt>
+<dd><p>Constant-Current-Constant-Voltage Control. We switch between charge and discharge scenarii. The switch occurs when the
+derivative of the non-controlled variable gets below a given threshold</p>
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="Utilities.CcCvControlModelInputParams.dIdtLimit">
+<span class="sig-name descname"><span class="pre">dIdtLimit</span></span><a class="headerlink" href="#Utilities.CcCvControlModelInputParams.dIdtLimit" title="Permalink to this definition"></a></dt>
+<dd><p>When voltage control, we wait for the derivative of the current to be below the value of dIdtLimit between we switch to the following constant current control.</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="Utilities.CcCvControlModelInputParams.dEdtLimit">
+<span class="sig-name descname"><span class="pre">dEdtLimit</span></span><a class="headerlink" href="#Utilities.CcCvControlModelInputParams.dEdtLimit" title="Permalink to this definition"></a></dt>
+<dd><p>Not used for the moment</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="constant-voltage">
+<h2>Constant Voltage<a class="headerlink" href="#constant-voltage" title="Permalink to this headline"></a></h2>
+<dl class="mat class">
+<dt class="sig sig-object mat" id="Utilities.CvControlModelInputParams">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">CvControlModelInputParams</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">jsonstruct</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Utilities.CvControlModelInputParams" title="Permalink to this definition"></a></dt>
+<dd><p>Constant Voltage control</p>
+<dl class="mat attribute">
+<dt class="sig sig-object mat" id="Utilities.CvControlModelInputParams.inputVoltage">
+<span class="sig-name descname"><span class="pre">inputVoltage</span></span><a class="headerlink" href="#Utilities.CvControlModelInputParams.inputVoltage" title="Permalink to this definition"></a></dt>
+<dd><p>Constant voltage control value</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="constant-current">
+<h2>Constant Current<a class="headerlink" href="#constant-current" title="Permalink to this headline"></a></h2>
+<dl class="mat class">
+<dt class="sig sig-object mat">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">CcCvControlModelInputParams</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">jsonstruct</span></em><span class="sig-paren">)</span></dt>
+<dd><p>Constant-Current-Constant-Voltage Control. We switch between charge and discharge scenarii. The switch occurs when the
+derivative of the non-controlled variable gets below a given threshold</p>
+<dl class="mat attribute">
+<dt class="sig sig-object mat">
+<span class="sig-name descname"><span class="pre">dIdtLimit</span></span></dt>
+<dd><p>When voltage control, we wait for the derivative of the current to be below the value of dIdtLimit between we switch to the following constant current control.</p>
+</dd></dl>
+
+<dl class="mat attribute">
+<dt class="sig sig-object mat">
+<span class="sig-name descname"><span class="pre">dEdtLimit</span></span></dt>
+<dd><p>Not used for the moment</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="batteryinput.html" class="btn btn-neutral float-left" title="Battery cell" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="geometryinput.html" class="btn btn-neutral float-right" title="Geometry models" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Simon Clark.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

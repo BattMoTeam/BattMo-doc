@@ -39,8 +39,9 @@
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials.html">Getting started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="advancedtopics.html">Advanced topics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="inputs.html">BattMo API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inputs.html">BattMo Li-ion battery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="geometryinput.html">Geometries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bibliography.html">References</a></li>
 </ul>
 
         </div>
@@ -83,24 +84,47 @@
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Getting started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="advancedtopics.html">Advanced topics</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="modelinitialisation.html">Model initialisation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="geometries.html">Geometry models</a></li>
-<li class="toctree-l2"><a class="reference internal" href="controls.html">Control models</a></li>
-<li class="toctree-l2"><a class="reference internal" href="diffusion.html">Diffusion models</a></li>
-<li class="toctree-l2"><a class="reference internal" href="thermal.html">Thermal model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="json.html">JSON inputs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="optimisation.html">Optimisation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="parsets.html">Parameter sets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Getting started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html#tutorial-1">Tutorial 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html#tutorial-2">Tutorial 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials.html#more-examples">More Examples</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="inputs.html">BattMo API</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="inputs.html#input-parameters-for-the-electrode-components">Input parameters for the electrode components</a></li>
-<li class="toctree-l2"><a class="reference internal" href="inputs.html#input-parameters-for-the-electrolyte-components">Input parameters for the Electrolyte components</a></li>
-<li class="toctree-l2"><a class="reference internal" href="inputs.html#input-parameters-for-the-battery">Input parameters for the Battery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inputs.html">BattMo Li-ion battery</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="batteryinput.html">Battery cell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="batteryinput.html#electrode-components">Electrode components</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="batteryinput.html#electrode">Electrode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="batteryinput.html#active-material">Active Material</a></li>
+<li class="toctree-l3"><a class="reference internal" href="batteryinput.html#interface">Interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="batteryinput.html#solid-diffusion-models">Solid Diffusion Models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="batteryinput.html#current-collector">Current Collector</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="batteryinput.html#electrolyte-components">Electrolyte components</a></li>
+<li class="toctree-l2"><a class="reference internal" href="controlinput.html">Control</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="controlinput.html#base-control-model">Base Control Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="controlinput.html#ieswitch-control">IESwitch Control</a></li>
+<li class="toctree-l3"><a class="reference internal" href="controlinput.html#constant-current-constant-voltage-control">Constant Current Constant Voltage Control</a></li>
+<li class="toctree-l3"><a class="reference internal" href="controlinput.html#constant-voltage">Constant Voltage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="controlinput.html#constant-current">Constant Current</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="geometryinput.html">Geometries</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="geometryinput.html#batterygenerator1d">BatteryGenerator1D</a></li>
+<li class="toctree-l2"><a class="reference internal" href="geometryinput.html#batterygenerator2d">BatteryGenerator2D</a></li>
+<li class="toctree-l2"><a class="reference internal" href="geometryinput.html#batterygenerator3d">BatteryGenerator3D</a></li>
+<li class="toctree-l2"><a class="reference internal" href="geometryinput.html#spiralbatterygenerator">SpiralBatteryGenerator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="geometryinput.html#coincellbatterygenerator">CoinCellBatteryGenerator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="geometryinput.html#blockbatterygenerator">BlockBatteryGenerator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="geometryinput.html#coincellsectorbatterygenerator">CoinCellSectorBatteryGenerator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="geometryinput.html#flatbatterygenerator">FlatBatteryGenerator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="geometryinput.html#sectorbatterygenerator">SectorBatteryGenerator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="geometryinput.html#base-class">Base class</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="bibliography.html">References</a></li>
 </ul>
 </div>
 </div>
